@@ -5718,3 +5718,21 @@ A cinematic fantasy scene of a fierce female use image for face reference warrio
 ```
 
 ***
+
+<a name="case-340"></a>
+
+### 例 340：彼岸花丛中的红妆女子
+
+![彼岸花丛中的红妆女子](../data/images/case340.png)
+
+**来源：** [@xiaofenggan](https://x.com/xiaofenggan)
+
+**补充：** 该“异质类 OC”案例线索由倒放老师发现。
+
+**提示词：**
+
+```text
+异质感oc，绝美红妆女子，位于彼岸花丛中，张力。 唐琬《钗头凤·世情薄》 世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！
+```
+
+***
