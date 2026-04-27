@@ -5736,3 +5736,132 @@ A cinematic fantasy scene of a fierce female use image for face reference warrio
 ```
 
 ***
+
+<a name="case-341"></a>
+
+### 例 341：AP Calculus 学习表信息图
+
+![AP Calculus 学习表信息图](../data/images/case341.jpg)
+
+**来源：** [@hqmank](https://x.com/hqmank/status/2048587150544028084)
+
+**补充：** 近 24 小时 X 社区案例，原帖发布于 2026-04-27 10:16（北京时间）。
+
+**提示词：**
+
+```text
+Please create a mathematical visualization infographic about "[math concept / topic]." The goal is to help the viewer intuitively understand what it is, why it works, its geometric or structural intuition, and how it behaves in different contexts. The visual should feel like a high-quality math lecture handout combined with a hand-drawn educational poster. It should be elegant, clear, and information-rich, but not cluttered. Visual style: either portrait or landscape is fine. Use a clean, light paper-like background, with a deep blue title and black or dark gray lines for the main content. Add a small number of refined accent colors such as blue, teal, gold, and red. Incorporate rounded-corner cards, thin borders, numbered labels, hand-drawn arrows, zoom-in callout boxes, and a summary section. The overall design should be aesthetically pleasing, balanced, and academic, allowing the viewer to grasp the structure of the concept and why it works at a glance.
+```
+
+***
+
+<a name="case-342"></a>
+
+### 例 342：四季包装 Campaign 宫格
+
+![四季包装 Campaign 宫格](../data/images/case342.jpg)
+
+**来源：** [@SRKDAN](https://x.com/SRKDAN/status/2048582939504431195)
+
+**补充：** 近 24 小时 X 社区案例，原帖发布于 2026-04-27 10:00（北京时间）。
+
+**提示词：**
+
+```text
+PHASE 1 - PRODUCT: [ITEM] in [MATERIAL] packaging, minimal label design
+PHASE 2 - GRID: 2x2 seasonal grid, four distinct brand worlds
+PHASE 3 - COMPOSITION: each quadrant a full campaign scene with props and environment
+PHASE 4 - CONSISTENCY: same product silhouette, four distinct palettes
+
+Swap: [ITEM] / [MATERIAL] / [LABEL STYLE]
+```
+
+***
+
+<a name="case-343"></a>
+
+### 例 343：高定时尚杂志封面
+
+![高定时尚杂志封面](../data/images/case343.jpg)
+
+**来源：** [@SPEEDAI07](https://x.com/SPEEDAI07/status/2048573343066992919)
+
+**补充：** 近 24 小时 X 社区案例，原帖发布于 2026-04-27 09:22（北京时间）。
+
+**提示词：**
+
+```text
+Ultra high-fashion magazine cover, Louis Vuitton-style editorial. Close-up portrait of a confident woman with soft rose-gold hair and natural airy bangs, slightly wind-blown for movement. She is wearing a luxury summer outfit: a structured lightweight linen or silk jacket in warm golden-yellow tones, layered over a modest high-neck top, paired with a bold gold choker necklace and subtle statement earrings.
+
+Fabric flows naturally with a summer breeze, slightly textured and breathable, capturing a premium seasonal feel. Styling is elegant, modest, and refined — no revealing clothing.
+
+Lighting is high-end studio mixed with natural golden hour glow: warm highlights, soft shadows, luminous skin with glossy editorial finish.
+
+Background is a rich summer gradient (sunset gold fading into soft coral or warm beige), clean but visually striking.
+
+Composition is dynamic and slightly cinematic: hair in motion, shallow depth of field, sharp focus on face.
+
+Typography: large elegant serif masthead "Louis Vuitton" at the top, bold cover line "YOUR CHOICE ENDS HERE" in premium editorial layout, minimal supporting text.
+
+Ultra-realistic, hyper-detailed skin texture, 8K resolution, sharp focus, glossy magazine print quality, cinematic color grading, luxury fashion photography, no nudity, tasteful and editorial.
+```
+
+***
+
+<a name="case-344"></a>
+
+### 例 344：NOIR 街头服饰 Campaign
+
+![NOIR 街头服饰 Campaign](../data/images/case344.jpg)
+
+**来源：** [@Daniel_adsss](https://x.com/Daniel_adsss/status/2048542581638701446)
+
+**补充：** 近 24 小时 X 社区案例，原帖发布于 2026-04-27 07:19（北京时间）。
+
+**提示词：**
+
+```text
+Create a premium, highly realistic 1:1 campaign poster for NOIR, a modern streetwear brand. Show one hero oversized hoodie as the main focus against a gritty urban backdrop with wet concrete floors, dramatic low lighting, subtle smoke in the air and a raw street energy. Add bold minimal typography with the brand name NOIR and a short campaign headline like "Wear the Dark." Make it feel like a real high-end streetwear editorial, sharp detail, realistic fabric textures, modern and edgy, deep black tones with subtle grey accents, no clutter, no collage.
+```
+
+***
+
+<a name="case-345"></a>
+
+### 例 345：法新浪潮撕纸电影海报
+
+![法新浪潮撕纸电影海报](../data/images/case345.jpg)
+
+**来源：** [@bananaprompts](https://x.com/bananaprompts/status/2048541390900994476) / [Banana Prompts](https://www.bananaprompts.xyz/prompts/70d54231-f0ee-4a50-9dfc-26156b72f819)
+
+**补充：** 近 24 小时 X 社区案例，原帖发布于 2026-04-27 07:15（北京时间）。
+
+**提示词：**
+
+```text
+Create a vertical poster composition on aged cream paper with a handmade analog feel. Use rough ripped paper edges, layered magazine cutouts, photocopy grain, halftone texture, ink bleed, and slightly imperfect screen-print registration. Keep the subject as the main black-and-white photographic portrait, placed prominently in the center or upper center. Surround the subject with graphic blocks of deep red, cobalt blue, warm yellow, black, and ivory.
+
+Add supporting collage fragments such as a rainy European street, film-strip borders, newspaper clippings, urban silhouettes, and cinematic details, arranged like a handmade 1960s art-house movie poster. Use bold condensed typography with a strong visual hierarchy. Add large headline text: "[MAIN TITLE]". Add smaller subtitle text: "[SUBTITLE]". Add bottom text: "[BRAND NAME / EVENT NAME / COMING SOON / DATE]". If needed, include a small top line reading "[TAGLINE]".
+
+The final result should feel cinematic, intellectual, rebellious, and editorial — like a lost 1960s European film poster with a strong point of view. Keep it raw, tactile, printed, imperfect, and handmade. Avoid a glossy modern finish.
+```
+
+***
+
+<a name="case-346"></a>
+
+### 例 346：立体刺绣小鸟花枝
+
+![立体刺绣小鸟花枝](../data/images/case346.jpg)
+
+**来源：** [@dotey](https://x.com/dotey/status/2048529821706195442)
+
+**补充：** 近 24 小时 X 社区案例，原帖发布于 2026-04-27 06:29（北京时间）。
+
+**提示词：**
+
+```text
+精致立体刺绣风插画，浅浮雕纤维艺术效果，纯净「蚕丝白 + 奶白」底色，细腻丝线质感。画面为数只小鸟停在蜿蜒花枝上，周围点缀粉白、浅桃、珊瑚粉、淡金色花朵与叶片，构图轻盈雅致、留白充足。鸟儿羽毛以奶白、浅蓝、淡粉、浅金丝线刺绣表现，花枝纤细自然，花朵层层叠线，整体呈现高级手工刺绣、丝线堆绣、柔和光影、细节丰富、温柔清新的艺术效果。
+```
+
+***

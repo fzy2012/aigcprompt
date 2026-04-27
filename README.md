@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://github.com/canghe/awesome-gpt-image-2"><img src="https://img.shields.io/github/stars/canghe/awesome-gpt-image-2?style=flat-square&color=rgb(25%2C%20121%2C%20255)" alt="Stars"></a>
   <a href="https://github.com/canghe/awesome-gpt-image-2"><img src="https://img.shields.io/github/forks/canghe/awesome-gpt-image-2?style=flat-square&color=green" alt="Forks"></a>
-  <a href="https://github.com/canghe/awesome-gpt-image-2"><img src="https://img.shields.io/badge/Cases-340-blueviolet?style=flat-square" alt="Cases"></a>
+  <a href="https://github.com/canghe/awesome-gpt-image-2"><img src="https://img.shields.io/badge/Cases-346-blueviolet?style=flat-square" alt="Cases"></a>
   <a href="https://github.com/canghe/awesome-gpt-image-2"><img src="https://img.shields.io/badge/100%25-Original_AI_Rewritten-green?style=flat-square" alt="Original"></a>
 </p>
 
@@ -27,7 +27,7 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
 
 - [完整案例总览](docs/gallery.md)
 - [案例画廊 Part 1：例 1-165](docs/gallery-part-1.md)
-- [案例画廊 Part 2：例 166-340](docs/gallery-part-2.md)
+- [案例画廊 Part 2：例 166-346](docs/gallery-part-2.md)
 - [工业级提示词模板与防坑指南](docs/templates.md#section-templates)
 - [MIT License](LICENSE)
 - [完整声明页](docs/disclaimer.md#section-disclaimer)
@@ -35,13 +35,13 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
 ## 🗂️ 分类概览
 
 - UI与界面：68
-- 图表与信息可视化：49
-- 海报与排版：59
-- 商品与电商：16
+- 图表与信息可视化：50
+- 海报与排版：62
+- 商品与电商：17
 - 品牌与标志：16
 - 建筑与空间：25
 - 摄影与写实：28
-- 插画与艺术：23
+- 插画与艺术：24
 - 人物与角色：10
 - 场景与叙事：7
 - 历史与古风题材：8
@@ -112,6 +112,15 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
 - [例 338：《赤壁怀古》长卷图](docs/gallery-part-2.md#case-338)
 - [例 339：Apple 风格自然科普海报](docs/gallery-part-2.md#case-339)
 - [例 340：彼岸花丛中的红妆女子](docs/gallery-part-2.md#case-340)
+
+### 近 24 小时 X 社区新增
+
+- [例 341：AP Calculus 学习表信息图](docs/gallery-part-2.md#case-341)
+- [例 342：四季包装 Campaign 宫格](docs/gallery-part-2.md#case-342)
+- [例 343：高定时尚杂志封面](docs/gallery-part-2.md#case-343)
+- [例 344：NOIR 街头服饰 Campaign](docs/gallery-part-2.md#case-344)
+- [例 345：法新浪潮撕纸电影海报](docs/gallery-part-2.md#case-345)
+- [例 346：立体刺绣小鸟花枝](docs/gallery-part-2.md#case-346)
 
 #### 代表案例 1：月下美女直播画面
 
