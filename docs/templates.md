@@ -120,6 +120,32 @@
 输出：1:1 或 4:5，适合社媒传播的运动商业视觉。
 ```
 
+**概念字体海报模板**
+
+```text
+Create ONE finished premium conceptual typography poster for the exact title:
+
+"[标题/词语/短句]"
+
+Single poster only. No moodboard, grid, presentation board, mockup, captions, prompt text, process sheet, or sample labels.
+
+The title must be the dominant visual structure of the poster: huge, readable, powerful, and spelled exactly. Do not translate, shorten, replace, or misspell it. Do not add other large readable text.
+
+Silently interpret the title's meaning, mood, cultural aura, symbolic associations, psychological tension, and visual rhythm. Turn that interpretation into one strong visual metaphor.
+
+Typography is the hero. Design custom-looking letterforms whose weight, width, contrast, spacing, rhythm, distortion, negative space, edge quality, and ink texture express the temperament of the title. The type should feel intentionally designed, not like a default font.
+
+If the title refers to a widely known person, make a large editorial portrait or half-body figure a major visual presence, occupying roughly 40%-70% of the composition. The figure should interact with the typography: overlapping the letters, emerging from them, being framed by them, casting shadows on them, breaking through them, or being partially hidden behind them.
+
+For abstract or non-person titles, use a human figure, landscape, object, or atmospheric setting only when it strengthens the meaning. It must interact with the typography and deepen the concept, not decorate it.
+
+Use a restrained 4-6 color system matched to the theme: dominant background color, primary typography color, figure / landscape tone, emotional accent color, muted support color, and subtle paper / ink texture tone.
+
+Composition style: high-end editorial poster, museum-quality graphic design, dramatic scale, strong hierarchy, few elements, intelligent whitespace, bold flat color areas, sharp cropping, silkscreen / lithograph / risograph grain, paper fibers, subtle ink imperfections, refined visual tension.
+
+Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, cluttered collage, excessive grunge, tourist clichés, official logos, copied slogans, copied campaign aesthetics, unrelated text, and misspelled typography.
+```
+
 **自然科普海报模板**
 
 ```text
@@ -246,6 +272,9 @@
 - **文案硬编码**：主标题与副标题都要写死，否则模型会给你疯狂加戏，自动瞎编不知所云的文字。
 - **运动海报先定结构**：运动 Campaign 最容易变成杂乱拼贴，先锁定“单主视觉 / 三联画 / 数据涂鸦”再写主体和文案。
 - **道具要当构图骨架**：球拍、哑铃、球鞋这类道具最好指定角度、比例和位置，否则模型容易把它们画成普通背景装饰。
+- **字体海报先锁标题**：概念字体海报必须明确“标题必须拼写完全正确且成为主视觉”，否则很容易变成漂亮但不可读的字效图。
+- **图像要和字互动**：人物、物体或场景必须嵌入、遮挡、穿过或托起字形，只摆在旁边会像装饰素材。
+- **禁止 moodboard 化**：明确要求 single poster only，避免模型生成多方案展示板、过程稿或样张拼贴。
 - **主体放大**：自然科普海报中，主体动物必须被极度放大，占据画面 50%-70% 的视觉面积，确保成为最强视觉中心。
 - **信息克制**：遵循“少而准”原则，底部信息区只使用四列极简布局，避免信息拥挤和视觉混乱。
 - **风格统一**：严格遵循 Apple 式极简风格，使用纯白背景、干净排版和柔和棚拍光影，避免传统信息图的卡片、圆角框等元素。
