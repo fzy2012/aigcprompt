@@ -2,120 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    /* 入行365 深海蓝主题 - 深色模式 */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 191 100% 50%;
-    --primary-foreground: 222 47% 6%;
-
-    --secondary: 262 83% 66%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 262 83% 66%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 191 100% 50%;
-
-    --radius: 0.75rem;
-  }
+:root {
+  --background: 222 47% 6%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 9%;
+  --card-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --border: 217 33% 17%;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  html {
-    @apply bg-background;
-  }
-
-  body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-}
-
-@layer components {
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-cyan to-brand-purple;
-  }
-
-  .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-border/50 rounded-xl;
-  }
-
-  .glow-border {
-    @apply relative;
-  }
-
-  .glow-border::before {
-    content: "";
-    @apply absolute -inset-[1px] rounded-xl bg-gradient-to-r from-brand-cyan to-brand-purple opacity-20 blur-sm;
-  }
-
-  .prompt-card {
-    @apply glass-card p-4 transition-all duration-300 hover:border-brand-cyan/50;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-brand-cyan to-brand-purple px-6 py-3 text-sm font-medium text-background transition-all hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2 focus:ring-offset-background;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-border bg-card/50 px-6 py-3 text-sm font-medium text-foreground transition-all hover:bg-card hover:border-brand-cyan/50 focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:ring-offset-2 focus:ring-offset-background;
-  }
-
-  .category-badge {
-    @apply inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground transition-colors hover:bg-brand-cyan/20 hover:text-brand-cyan;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-pretty {
-    text-wrap: pretty;
-  }
-
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-/* 代码块样式 */
-pre {
-  @apply bg-muted/50 rounded-lg p-4 overflow-x-auto text-sm;
-}
-
-code {
-  @apply font-mono text-sm;
-}
-
-/* 选中文本样式 */
-::selection {
-  @apply bg-brand-cyan/30;
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
