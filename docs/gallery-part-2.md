@@ -6344,3 +6344,198 @@ INPUT_TEXT：Phoenix Rebirth
 ```
 
 ***
+
+<a name="case-356"></a>
+
+### 例 356：过度思考超现实街头 Campaign
+
+![过度思考超现实街头 Campaign](../data/images/case356.jpg)
+
+**来源：** [@AIwithAliya](https://x.com/AIwithAliya/status/2049044716642316758)
+
+**提示词：**
+
+```text
+Ultra-realistic conceptual portrait of a young woman with long wavy hair and soft defined features, wearing rose-tinted rectangular sunglasses, an oversized ivory cropped t-shirt, fitted light-wash denim jeans, and clean white sneakers. She is sitting casually with a confident yet relaxed posture.
+
+The twist: she is seated on a large, hyper-realistic version of her own detached head placed on the ground. The head is scaled up, lying sideways, with the same facial features and sunglasses, creating a surreal self-reflection concept.
+
+Composition: centered, full-body shot, neutral studio background with soft blush and cream tones, minimal aesthetic. Clean negative space.
+
+Typography integrated into the background:
+
+Handwritten-style text at the top: "OVERTHINKING"
+
+Below it, smaller text: "TRAPPED IN MY OWN HEART" with "HEART" crossed out
+
+Large, rough, scribbled text in deep pink: "MIND"
+
+Lighting: soft diffused studio lighting, subtle shadows, high detail, fashion editorial quality.
+
+Style: blend of surrealism and modern luxury streetwear campaign, pastel feminine aesthetic, minimal yet expressive, high-resolution, 8k, sharp focus, natural skin texture.
+
+Mood: introspective, emotional weight, identity, self-awareness, quiet confidence.
+```
+
+***
+
+<a name="case-357"></a>
+
+### 例 357：鱼眼镜面复古咖啡馆人像
+
+![鱼眼镜面复古咖啡馆人像](../data/images/case357.jpg)
+
+**来源：** [@harboriis](https://x.com/harboriis/status/2049044698900361241)
+
+**提示词：**
+
+```text
+A fish-eye lens close-up of [your photo as reference] sipping from a teal/turquoise coffee mug, leaning forward intimately toward camera. Shot through or near a round mirror. Retro café interior with glossy teal subway tiles, vintage appliances, pendant lights. Black t-shirt, yellow-tinted round glasses. Warm moody tones.
+```
+
+***
+
+<a name="case-358"></a>
+
+### 例 358：草莓能量饮料商业广告
+
+![草莓能量饮料商业广告](../data/images/case358.jpg)
+
+**来源：** [@SPEEDAI07](https://x.com/SPEEDAI07/status/2049043627163435040)
+
+**提示词：**
+
+```text
+A hyper-realistic commercial advertisement blending energy drink and sports branding. A dynamic athletic woman mid-air jump, wearing modern sportswear (light translucent jacket, orange shorts, white sneakers), surrounded by explosive splashes of red strawberry liquid and flying ice cubes. A cold metallic energy drink can (strawberry flavor) bursting with droplets sits in the foreground, covered in condensation. Fresh strawberries scattered on a glossy reflective surface.
+
+Bright cinematic lighting with dramatic highlights and motion effects. Vibrant orange gradient background with bold glowing typography behind the subject. Ultra-detailed, high contrast, sharp focus, commercial product photography style, 8K resolution, advertising poster aesthetic, energetic, powerful, refreshing mood.
+```
+
+***
+
+<a name="case-359"></a>
+
+### 例 359：水墨双重曝光人物海报
+
+![水墨双重曝光人物海报](../data/images/case359.jpg)
+
+**来源：** [@Goodmanprotocol](https://x.com/Goodmanprotocol/status/2049002279051895243)
+
+**提示词：**
+
+```text
+A cinematic character promotional poster of [SUBJECT], vertical composition (9:16), designed with a refined East-Asian ink aesthetic and high-end visual storytelling.
+
+STRUCTURE:
+Top-heavy hierarchical layout. The upper half features a large, highly recognizable silhouette of [SUBJECT]'s head / face / mask / upper body, forming a bold, iconic primary shape. The silhouette should be instantly identifiable.
+
+The middle-lower section contains the full-body version of [SUBJECT] as a secondary subject, standing in a stable pose or subtle action stance, forming the visual core.
+
+COMPOSITION STYLE:
+Inside the large silhouette and around the character, use double exposure and collage storytelling. Integrate multiple elements:
+- key scenes related to [SUBJECT]
+- symbolic imagery and environment
+- small narrative figures and interactions
+- supporting visual motifs
+
+Blend everything seamlessly using clouds, mist, ink diffusion, and negative space.
+
+VISUAL FLOW:
+Create a continuous flowing visual path from top to bottom, connecting:
+- upper silhouette
+- inner collage elements
+- full-body subject
+
+Ensure smooth eye guidance and compositional cohesion.
+
+SIDE ELEMENTS:
+Add balanced supporting elements on left and right sides to create tension, depth, and spatial variation.
+
+STYLE & ATMOSPHERE:
+- Large areas of negative space
+- Ink-wash diffusion edges, soft fading, subtle fragmentation
+- Eastern aesthetic: balance of emptiness and detail
+- Calm, premium, restrained, cinematic tone
+
+QUALITY:
+Ultra-detailed, high resolution, layered depth, soft lighting, atmospheric perspective, cohesive series-style design.
+
+OUTPUT:
+9:16 aspect ratio, poster-ready composition.
+```
+
+***
+
+<a name="case-360"></a>
+
+### 例 360：长发造型分析信息图
+
+![长发造型分析信息图](../data/images/case360.jpg)
+
+**来源：** [@Gemalpha_88](https://x.com/Gemalpha_88/status/2048918707343401034)
+
+**提示词：**
+
+```text
+Create a professional "HAIRSTYLE ANALYSIS" infographic with a different male model (the same face) having long, thick hair (6-10 inches), slightly wavy texture.
+
+Style should be clean, modern, premium grooming guide (similar layout but not identical).
+
+TOP TITLE:
+"HAIRSTYLE ANALYSIS - Long Hair Edition"
+
+LEFT PANEL (Key Features with icons):
+Face Shape: Oval
+Hair Type: Thick
+Texture: Wavy
+Length: Long
+
+BEST OPTIONS (Top row with green indicators):
+Layered Flow Cut (Adds movement & volume)
+Modern Curtain Hair (Stylish & balanced)
+Textured Long Waves (Natural & full)
+Loose Slick Back (Controlled but not flat)
+
+LESS FLATTERING (Bottom row with red indicators):
+Flat Straight Long Hair (No volume)
+Overly Oily Slick Back (Too heavy)
+Uneven Long Layers (Messy shape)
+Excessively Frizzy Look (Uncontrolled)
+
+BEST HAIR LENGTH SECTION:
+Ideal: 6-10 inches with layers
+Avoid: Too flat or too heavy bottom
+
+BEST HAIR COLORS:
+Dark Brown
+Natural Black
+Warm Brown
+Ash Brown
+
+DESIGN STYLE:
+Clean grid infographic
+White/beige background
+Soft shadows
+Premium magazine look
+Realistic face and hair detail
+Consistent spacing and typography
+High resolution, 4K
+```
+
+***
+
+<a name="case-361"></a>
+
+### 例 361：手机爆炸拆解图
+
+![手机爆炸拆解图](../data/images/case361.jpg)
+
+**来源：** [@Ankit_patel211](https://x.com/Ankit_patel211/status/2048834306379075759)
+
+**提示词：**
+
+```text
+Create a 3D Insane detailed exploded assembly drawing of [subject or object]
+```
+
+***

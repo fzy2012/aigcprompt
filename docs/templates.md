@@ -4,7 +4,7 @@
 
 ## 🧩 工业级提示词模板与防坑指南
 
-> 大家好，我是你们的无情逆向机器。为了让大家能直接“开箱即用”，我把那 329 个案例扒了个底朝天，硬生生提炼出了这 13 套**工业级提示词模板**。
+> 大家好，我是你们的无情逆向机器。为了让大家能直接“开箱即用”，我把这 361 个案例扒了个底朝天，硬生生提炼出了 14 套**工业级提示词模板**。
 > 说实话，整理这些规则差点给我干废了，但跑通之后真的很香！每一套模板都自带“防坑指南”，直接复制填空，再也不用玄学抽卡了。
 
 <a name="tpl-ui"></a>
@@ -144,6 +144,22 @@ Use a restrained 4-6 color system matched to the theme: dominant background colo
 Composition style: high-end editorial poster, museum-quality graphic design, dramatic scale, strong hierarchy, few elements, intelligent whitespace, bold flat color areas, sharp cropping, silkscreen / lithograph / risograph grain, paper fibers, subtle ink imperfections, refined visual tension.
 
 Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, cluttered collage, excessive grunge, tourist clichés, official logos, copied slogans, copied campaign aesthetics, unrelated text, and misspelled typography.
+```
+
+**水墨双重曝光人物海报模板**
+
+```text
+生成一张[人物/角色/品牌主理人/运动员]的水墨双重曝光人物海报。
+画幅：9:16 竖版，高级电影海报构图。
+主体结构：
+- 上半区：放大的人物头部、面部轮廓或半身剪影，形成最强识别锚点。
+- 中下区：同一人物的全身或半身主体，姿态为[站姿/动作姿态/凝视镜头]。
+- 剪影内部：融合[关键场景]、[象征物]、[叙事片段]、[环境纹理]，形成双重曝光叙事。
+视觉连接：用云雾、水墨扩散、飞白边缘、负空间和柔和明暗过渡，把上方剪影、内部拼贴和下方主体连成一条从上到下的视觉动线。
+风格：东方水墨美学 + 写实电影感，克制、高级、留白充足，层次丰富但不杂乱。
+文字：可加入[标题/姓名/短句]，必须少量、可读、像海报题签而不是信息图说明。
+约束：不要硬拼贴，不要把背景塞满，不要廉价武侠特效，不要复制真实海报版式，不要让剪影和主体互相抢焦点。
+输出：海报级完成图，主体清晰，水墨边缘自然，叙事元素与人物身份强相关。
 ```
 
 **自然科普海报模板**
