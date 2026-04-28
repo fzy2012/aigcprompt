@@ -75,25 +75,44 @@ export async function parseGalleryMarkdown(filePath: string): Promise<PromptCase
   const content = fs.readFileSync(fullPath, "utf-8")
   const cases: PromptCase[] = []
 
-  // 匹配每个案例块
-  const casePattern = /<a name="case-(\d+)"><\/a>\s*###\s*例\s*\d+[：:]\s*(.+?)\n\n!\[.+?\]\(([^)]+)\)\n\n\*\*来源[：:]\*\*\s*(.+?)\n\n\*\*提示词[：:]\*\*\s*\n\n```(?:text|json)?\n([\s\S]+?)```/g
-
-  let match
-  while ((match = casePattern.exec(content)) !== null) {
-    const [, id, title, image, source, prompt] = match
+  // 按 *** 分割案例块
+  const blocks = content.split(/\*{3,}/)
+  
+  for (const block of blocks) {
+    // 匹配案例ID
+    const idMatch = block.match(/<a name="case-(\d+)"><\/a>/)
+    if (!idMatch) continue
     
-    // 处理图片路径
-    let imagePath = image.trim()
+    const id = parseInt(idMatch[1])
+    
+    // 匹配标题
+    const titleMatch = block.match(/###\s*例\s*\d+[：:]\s*(.+)/)
+    if (!titleMatch) continue
+    const title = titleMatch[1].trim()
+    
+    // 匹配图片
+    const imageMatch = block.match(/!\[.*?\]\(([^)]+)\)/)
+    if (!imageMatch) continue
+    let imagePath = imageMatch[1].trim()
     if (imagePath.startsWith("../")) {
       imagePath = imagePath.replace("../", "/")
     }
     
+    // 匹配来源
+    const sourceMatch = block.match(/\*\*来源[：:]\*\*\s*(.+)/)
+    const source = sourceMatch ? sourceMatch[1].trim() : "未提供"
+    
+    // 匹配提示词
+    const promptMatch = block.match(/```(?:text|json)?\s*\n([\s\S]+?)```/)
+    if (!promptMatch) continue
+    const prompt = promptMatch[1].trim()
+    
     cases.push({
-      id: parseInt(id),
-      title: title.trim(),
+      id,
+      title,
       image: imagePath,
-      source: source.trim(),
-      prompt: prompt.trim(),
+      source,
+      prompt,
       category: inferCategory(title),
     })
   }
@@ -113,31 +132,51 @@ export async function parseTemplatesMarkdown(filePath: string): Promise<Template
   const content = fs.readFileSync(fullPath, "utf-8")
   const templates: Template[] = []
 
-  // 模板部分的标题模式
-  const sectionPattern = /<a name="tpl-(\w+)"><\/a>\s*###\s*(.+?)\n\n\*\*常规模板\*\*\s*\n\n```text\n([\s\S]+?)```(?:\s*\n\n\*\*JSON 进阶模板[^*]*\*\*\s*\n\n```json\n([\s\S]+?)```)?(?:\s*\n\n\*\*避坑指南\*\*\s*\n([\s\S]+?)(?=\n###|\n<a name|$))?/g
-
-  let match
-  while ((match = sectionPattern.exec(content)) !== null) {
-    const [, id, name, basicTemplate, jsonTemplate, tipsSection] = match
+  // 按 <a name="tpl- 分割模板块
+  const tplBlocks = content.split(/<a name="tpl-/)
+  
+  for (const block of tplBlocks) {
+    if (!block.includes('"></a>')) continue
     
-    // 解析避坑指南
+    // 提取 ID
+    const idMatch = block.match(/^(\w+)"><\/a>/)
+    if (!idMatch) continue
+    const id = idMatch[1]
+    
+    // 提取名称
+    const nameMatch = block.match(/###\s*(.+)/)
+    if (!nameMatch) continue
+    const name = nameMatch[1].trim()
+    
+    // 提取常规模板 - 第一个 ```text 块
+    const basicMatch = block.match(/\*\*常规模板\*\*[\s\S]*?```text\s*\n([\s\S]+?)```/)
+    const basicTemplate = basicMatch ? basicMatch[1].trim() : ""
+    
+    // 提取 JSON 模板
+    const jsonMatch = block.match(/```json\s*\n([\s\S]+?)```/)
+    const jsonTemplate = jsonMatch ? jsonMatch[1].trim() : undefined
+    
+    // 提取避坑指南
     const tips: string[] = []
+    const tipsSection = block.match(/\*\*避坑指南\*\*[\s\S]*?((?:- \*\*.+\n?)+)/)
     if (tipsSection) {
       const tipPattern = /- \*\*(.+?)\*\*[：:]\s*(.+)/g
       let tipMatch
-      while ((tipMatch = tipPattern.exec(tipsSection)) !== null) {
+      while ((tipMatch = tipPattern.exec(tipsSection[1])) !== null) {
         tips.push(`${tipMatch[1]}：${tipMatch[2]}`)
       }
     }
-
-    templates.push({
-      id,
-      name: name.trim(),
-      description: `${name}类型的工业级提示词模板`,
-      basicTemplate: basicTemplate.trim(),
-      jsonTemplate: jsonTemplate?.trim(),
-      tips,
-    })
+    
+    if (basicTemplate) {
+      templates.push({
+        id,
+        name,
+        description: `${name}类型的工业级提示词模板`,
+        basicTemplate,
+        jsonTemplate,
+        tips,
+      })
+    }
   }
 
   return templates

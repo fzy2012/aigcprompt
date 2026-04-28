@@ -8,9 +8,13 @@ import { FeaturedCases } from "@/components/featured-cases"
 import { StatsSection } from "@/components/stats-section"
 
 export default async function HomePage() {
+  console.log("[v0] HomePage: Starting to load data...")
   const cases = await getAllCases()
+  console.log("[v0] HomePage: Loaded cases:", cases.length)
   const categories = await getCategories()
+  console.log("[v0] HomePage: Loaded categories:", categories.length)
   const templates = await getAllTemplates()
+  console.log("[v0] HomePage: Loaded templates:", templates.length)
 
   // 精选案例 - 取一些有代表性的
   const featuredCases = cases.filter((c) =>
