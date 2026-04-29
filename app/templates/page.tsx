@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { TemplateCard } from "@/components/template-card"
 import { FileCode2, Lightbulb, Zap } from "lucide-react"
 
@@ -329,7 +327,7 @@ const templates = [
   "constraints": "No modern elements, historically accurate clothing structure"
 }`,
     tips: [
-      "拒绝大杂烩：明确朝代（唐/宋/明），否则大模型会给你画出一个穿着和服、拿着清朝折扇在唐朝宫殿里的人。",
+      "拒绝大杂烩：明确朝代（唐/宋/明），否则大模型会给你画出一个���着和服、拿着清朝折扇在唐朝宫殿里的人。",
       "强制排雷：一定要加上\"禁用现代元素（No modern elements）\"，防止古风美女手里突然多出一杯星巴克。",
     ],
   },
@@ -401,10 +399,7 @@ const templates = [
 
 export default function TemplatesPage() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-
-      <main className="flex-1 pt-20">
+    <div className="pt-16">
         {/* Page Header */}
         <section className="py-12 border-b border-border">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -462,9 +457,6 @@ export default function TemplatesPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
     </div>
   )
 }

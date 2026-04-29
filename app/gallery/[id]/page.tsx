@@ -2,8 +2,6 @@ import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { CopyButton } from "@/components/copy-button"
 import { FavoriteButton } from "@/components/favorite-button"
 import { getAllCases } from "@/lib/parse-markdown"
@@ -62,122 +60,116 @@ export default async function CaseDetailPage({
   const nextCase = caseIndex < cases.length - 1 ? cases[caseIndex + 1] : null
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <div className="pt-16">
+      <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
+          <Link href="/gallery" className="hover:text-foreground transition-colors">
+            案例画廊
+          </Link>
+          <span>/</span>
+          <Link
+            href={`/gallery?category=${promptCase.category}`}
+            className="hover:text-foreground transition-colors"
+          >
+            {categoryNames[promptCase.category] || promptCase.category}
+          </Link>
+          <span>/</span>
+          <span className="text-foreground">例 {promptCase.id}</span>
+        </nav>
 
-      <main className="flex-1 pt-20">
-        <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link href="/gallery" className="hover:text-foreground transition-colors">
-              案例画廊
-            </Link>
-            <span>/</span>
-            <Link
-              href={`/gallery?category=${promptCase.category}`}
-              className="hover:text-foreground transition-colors"
-            >
-              {categoryNames[promptCase.category] || promptCase.category}
-            </Link>
-            <span>/</span>
-            <span className="text-foreground">例 {promptCase.id}</span>
-          </nav>
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Image Section */}
+          <div className="space-y-4">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-muted">
+              <Image
+                src={promptCase.image}
+                alt={promptCase.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Image Section */}
-            <div className="space-y-4">
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-muted">
-                <Image
-                  src={promptCase.image}
-                  alt={promptCase.title}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+            {/* Navigation */}
+            <div className="flex items-center justify-between">
+              {prevCase ? (
+                <Link
+                  href={`/gallery/${prevCase.id}`}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  上一个案例
+                </Link>
+              ) : (
+                <div />
+              )}
+              {nextCase && (
+                <Link
+                  href={`/gallery/${nextCase.id}`}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  下一个案例
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {/* Content Section */}
+          <div className="space-y-6">
+            {/* Title & Meta */}
+            <div>
+              <div className="flex items-start justify-between gap-4">
+                <h1 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
+                  {promptCase.title}
+                </h1>
+                <FavoriteButton id={promptCase.id} />
               </div>
 
-              {/* Navigation */}
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <span className="category-badge">
+                  {categoryNames[promptCase.category] || promptCase.category}
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  案例 #{promptCase.id}
+                </span>
+              </div>
+
+              {promptCase.source && promptCase.source !== "未提供" && (
+                <p className="mt-3 text-sm text-muted-foreground">
+                  来源: {promptCase.source}
+                </p>
+              )}
+            </div>
+
+            {/* Prompt */}
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
-                {prevCase ? (
-                  <Link
-                    href={`/gallery/${prevCase.id}`}
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <ArrowLeft className="w-4 h-4" />
-                    上一个案例
-                  </Link>
-                ) : (
-                  <div />
-                )}
-                {nextCase && (
-                  <Link
-                    href={`/gallery/${nextCase.id}`}
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    下一个案例
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                )}
+                <h2 className="text-lg font-semibold text-foreground">提示词</h2>
+                <CopyButton text={promptCase.prompt} />
+              </div>
+
+              <div className="relative">
+                <pre className="p-4 rounded-xl bg-muted/50 border border-border text-sm text-foreground whitespace-pre-wrap leading-relaxed overflow-x-auto font-mono">
+                  {promptCase.prompt}
+                </pre>
               </div>
             </div>
 
-            {/* Content Section */}
-            <div className="space-y-6">
-              {/* Title & Meta */}
-              <div>
-                <div className="flex items-start justify-between gap-4">
-                  <h1 className="text-2xl lg:text-3xl font-bold text-foreground text-balance">
-                    {promptCase.title}
-                  </h1>
-                  <FavoriteButton id={promptCase.id} />
-                </div>
-
-                <div className="mt-4 flex flex-wrap items-center gap-3">
-                  <span className="category-badge">
-                    {categoryNames[promptCase.category] || promptCase.category}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    案例 #{promptCase.id}
-                  </span>
-                </div>
-
-                {promptCase.source && promptCase.source !== "未提供" && (
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    来源: {promptCase.source}
-                  </p>
-                )}
-              </div>
-
-              {/* Prompt */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-foreground">提示词</h2>
-                  <CopyButton text={promptCase.prompt} />
-                </div>
-
-                <div className="relative">
-                  <pre className="p-4 rounded-xl bg-muted/50 border border-border text-sm text-foreground whitespace-pre-wrap leading-relaxed overflow-x-auto">
-                    {promptCase.prompt}
-                  </pre>
-                </div>
-              </div>
-
-              {/* Tips */}
-              <div className="p-4 rounded-xl bg-brand-cyan/5 border border-brand-cyan/20">
-                <h3 className="font-semibold text-foreground mb-2">使用提示</h3>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>- 可以直接复制提示词用于 GPT-Image2 等 AI 绘图工具</li>
-                  <li>- 根据实际需求修改方括号 [] 内的参数</li>
-                  <li>- 建议保留结构化的描述格式以获得更稳定的结果</li>
-                </ul>
-              </div>
+            {/* Tips */}
+            <div className="p-4 rounded-xl bg-brand-cyan/5 border border-brand-cyan/20">
+              <h3 className="font-semibold text-foreground mb-2">使用提示</h3>
+              <ul className="text-sm text-muted-foreground space-y-2">
+                <li>- 可以直接复制提示词用于 GPT-Image2 等 AI 绘图工具</li>
+                <li>- 根据实际需求修改方括号 [] 内的参数</li>
+                <li>- 建议保留结构化的描述格式以获得更稳定的结果</li>
+              </ul>
             </div>
           </div>
         </div>
-      </main>
-
-      <Footer />
+      </div>
     </div>
   )
 }
