@@ -6816,3 +6816,155 @@ Style: mix of photorealism and vibrant cartoon illustration, pop-art aesthetic, 
 ```
 
 ***
+
+<a name="case-368"></a>
+
+### 例 368：印度餐厅菜单改造宣传图
+
+![印度餐厅菜单改造宣传图](../data/images/case368.jpg)
+
+**来源：** [@Johnson998877](https://x.com/Johnson998877/status/2050354965110268123)
+
+**提示词：**
+
+```text
+这是india 料理中的一份真实menu。根据此 重新生成带文本说明的 引人入胜垂涎欲滴的 说明图片 先用English 文本易于识别（手机小屏幕） 这个是beef roast
+```
+
+***
+
+<a name="case-369"></a>
+
+### 例 369：明洞旅游区域地图
+
+![明洞旅游区域地图](../data/images/case369.jpg)
+
+**来源：** [@so\_ainsight](https://x.com/so_ainsight/status/2050354639036654048)
+
+**提示词：**
+
+```text
+[エリア]の観光エリアマップを画像で作成して
+```
+
+***
+
+<a name="case-370"></a>
+
+### 例 370：Crumple Chair 概念沙发研发板
+
+![Crumple Chair 概念沙发研发板](../data/images/case370.jpg)
+
+**来源：** [@ShamsAmin56](https://x.com/ShamsAmin56/status/2050281206139461780)
+
+**提示词：**
+
+```text
+Design Concept: The Crumple Chair Core Philosophy: Translating the "controlled chaos" of a tossed paper ball into a sculptural, high-comfort seating experience.
+
+Stage 1: Observation & Morphological Analysis The goal is to deconstruct the image of the crumpled paper into usable geometric data. Crease Mapping: Identify the primary "valley" and "ridge" lines. These represent potential structural ribs or seams in the chair. Faceted Planes: Break down the sphere into a series of non-uniform polygons. Each flat surface of the paper becomes a potential panel for the chair’s upholstery or shell. Shadow Study: Analyze how the "tossed" form creates deep recesses. These natural pockets guide where the user’s weight will be cradled.
+
+Stage 2: Iterative Form Exploration Moving from a sphere to a seat through "Digital Crumpling." Subtractive Sculpting: Imagine the paper ball as a solid mass. Use Boolean operations to "carve out" a seating cavity that fits the human form while maintaining the external jagged texture. Tension Simulation: Use 3D software (like Rhino or Blender) to simulate a flat sheet of material being compressed. This ensures the folds look authentic and not "modeled." The "Toss" Logic: Experiment with gravity-based simulation dropping a digital mesh to see how it settles naturally, mimicking the "tossed" origin.
+
+Stage 3: Ergonomic Translation & Blueprinting Refining the raw aesthetic into a functional object. The Comfort Core: Overlay a standard ergonomic template (Seating Angle: 105°–110°) over the crumpled form. Adjust the internal "folds" to provide lumbar support and pressure relief. Blueprint Generation: Create technical orthographic views (Front, Side, Top). Map out the dimensions: Seat Height: 450mm Total Width: 850mm Surface Smoothing: Maintain the sharp "paper edges" on the exterior shell while softening the interior contact points for skin comfort.
+
+Stage 4: Structural Integration & Scaling Making the concept physically viable. The Skeleton: Design a hidden internal frame (likely CNC-bent steel rods or a 3D-printed lattice) that follows the most prominent ridges of the paper folds to provide rigidity. Material Selection: * Option A (High-End): Faceted, cast aluminum with a white powder coat. Option B (Soft): Vacuum-formed recycled plastic shell covered in "memory-fold" technical fabric that retains a wrinkled appearance.
+
+Stage 5: Final Prototyping & Material Finish Textural Replication: Apply a matte, slightly porous finish to the material to mimic the tactile feel of heavy-bond paper. Lighting Contrast: Use directional studio lighting in the final renders to emphasize the "tossed" shadows, making the chair look like a giant piece of discarded inspiration. Design Tip: To keep the "tossed" look authentic, avoid symmetry. The most compelling aspect of a crumpled paper ball is its unique irregularity—ensure the left and right sides of the chair are balance-equivalent but not identical
+```
+
+***
+
+<a name="case-371"></a>
+
+### 例 371：Scrapbook 真人图与迷你分身
+
+![Scrapbook 真人图与迷你分身](../data/images/case371.jpg)
+
+**来源：** [@Kashberg\_0](https://x.com/Kashberg_0/status/2050272100884340783)
+
+**提示词：**
+
+```text
+Transform the provided reference image into a cozy aesthetic scrapbook-style composition while strictly preserving the original subject, identity, pose, lighting, and background.
+
+Add multiple small “mini version” characters of the same person (chibi / doll-like style), placed naturally around the scene (on objects, table, shoulder, etc.). These mini figures must match the subject’s face, hairstyle, outfit, and vibe consistently, styled as cute 3D collectible figurines. Show them doing different activities (reading, posing, taking photos, relaxing).
+
+Overlay handwritten-style doodles and annotations across the image: arrows, hearts, stars, sparkles, icons, and playful captions connected to elements in the scene.
+
+Use a soft pastel color palette (white base with pink, peach, blue accents).
+
+Keep the frame visually rich and filled but balanced and clean.
+
+Style: warm, cozy lighting, dreamy Instagram scrapbook aesthetic, soft depth of field, highly detailed, polished but playful.
+
+The final result must look like the SAME original image enhanced with mini alter-egos and aesthetic annotations — not a recreated or different scene.
+```
+
+***
+
+<a name="case-372"></a>
+
+### 例 372：可爱角色设定表
+
+![可爱角色设定表](../data/images/case372.jpg)
+
+**来源：** [@xRahultripathi](https://x.com/xRahultripathi/status/2050152865566708134)
+
+**提示词：**
+
+```text
+Create a cute female character design sheet inspired by the uploaded image.
+
+Style: warm, soft, semi-realistic cartoon illustration with a cozy Japanese kawaii vibe (pastel tones, smooth shading, clean lineart).
+
+Make it a clean character concept poster layout including:
+
+One large main female portrait (front view, detailed)
+
+Facial expression set (happy, shy, annoyed, sleepy, surprised, excited)
+
+2–3 full-body poses (standing, walking/running, playful pose)
+
+Small accessory/object icons that match her personality (hair clip, cute bag, phone charm, coffee cup, keychain)
+
+A simple color palette section (skin, hair, outfit, accent colors)
+
+A profile info box with: name, age range, personality traits, likes/dislikes, short description
+
+Overall look should feel charming, cozy, feminine, and professionally arranged like an animation character design sheet.
+High quality, clean background, soft lighting.
+```
+
+***
+
+<a name="case-373"></a>
+
+### 例 373：高端肉类海鲜品牌英雄图
+
+![高端肉类海鲜品牌英雄图](../data/images/case373.jpg)
+
+**来源：** [@xpg0970](https://x.com/xpg0970/status/2050108279385419965)
+
+**提示词：**
+
+```text
+一、品牌基础设定
+品牌名称：[请填写，例如：PRIME STEAK / OCEAN PRIME]
+品牌标语：[请填写，例如：Steakhouse Quality, Your Table / Restaurant Grade, Home Delivered]
+主色调：[请填写，例如：黑金 / 深红+金 / 深蓝+银]
+字体风格：
+标题：[请填写，例如：金色衬线体，大写，奢华感]
+正文：[请填写，例如：细衬线体/无衬线体]
+二、核心视觉元素
+台面材质：[请填写，例如：大理石/黑色石板]
+背景调性：[请填写，例如：深色渐变/暗调餐厅环境]
+光线风格：[请填写，例如：聚光/侧光/顶部照明]
+三、主产品定义（必填）
+产品名称/类型：[请填写，例如：和牛牛排 / 帝王蟹 / 北极甜虾]
+产品数量/摆放：[请填写，例如：1份单品 / 3块整齐摆放]
+呈现方式：[请填写，例如：切片展示 / 带骨展示 / 原壳展示]
+产品特色/质感提示：[请填写，例如：肉质纹理清晰、多汁感 / 光泽晶亮 / 肉眼可见油花]
+```
+
+***
