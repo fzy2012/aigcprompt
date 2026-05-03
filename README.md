@@ -42,22 +42,19 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
 <table>
   <tr>
     <td width="33%" valign="top" align="center">
-      <h4>🧩 UI与界面</h4>
-      <sub><strong>68 cases</strong></sub><br>
+      <p><strong>🧩 UI与界面</strong><br><sub>68 cases</sub></p>
       <a href="docs/gallery.md#cat-ui"><img src="data/images/category-covers/ui.jpg" alt="UI与界面" width="220"></a><br>
       <sub>App、网页、仪表盘、社媒截图与产品界面。</sub><br>
       <a href="docs/gallery.md#cat-ui"><strong>查看案例</strong></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <h4>📊 图表与信息可视化</h4>
-      <sub><strong>55 cases</strong></sub><br>
+      <p><strong>📊 图表与信息可视化</strong><br><sub>55 cases</sub></p>
       <a href="docs/gallery.md#cat-infographic"><img src="data/images/category-covers/infographic.jpg" alt="图表与信息可视化" width="220"></a><br>
       <sub>信息图、知识图谱、技术解释与结构化图解。</sub><br>
       <a href="docs/gallery.md#cat-infographic"><strong>查看案例</strong></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <h4>📰 海报与排版</h4>
-      <sub><strong>71 cases</strong></sub><br>
+      <p><strong>📰 海报与排版</strong><br><sub>71 cases</sub></p>
       <a href="docs/gallery.md#cat-poster"><img src="data/images/category-covers/poster.jpg" alt="海报与排版" width="220"></a><br>
       <sub>活动海报、封面、字体视觉和强排版画面。</sub><br>
       <a href="docs/gallery.md#cat-poster"><strong>查看案例</strong></a>
@@ -65,22 +62,19 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
   </tr>
   <tr>
     <td width="33%" valign="top" align="center">
-      <h4>🛍️ 商品与电商</h4>
-      <sub><strong>24 cases</strong></sub><br>
+      <p><strong>🛍️ 商品与电商</strong><br><sub>24 cases</sub></p>
       <a href="docs/gallery.md#cat-product"><img src="data/images/category-covers/product.jpg" alt="商品与电商" width="220"></a><br>
       <sub>商品图、详情页、包装卖点和商业广告。</sub><br>
       <a href="docs/gallery.md#cat-product"><strong>查看案例</strong></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <h4>🏷️ 品牌与标志</h4>
-      <sub><strong>19 cases</strong></sub><br>
+      <p><strong>🏷️ 品牌与标志</strong><br><sub>19 cases</sub></p>
       <a href="docs/gallery.md#cat-brand"><img src="data/images/category-covers/brand.jpg" alt="品牌与标志" width="220"></a><br>
       <sub>Logo、VI、品牌触点和 Campaign 视觉系统。</sub><br>
       <a href="docs/gallery.md#cat-brand"><strong>查看案例</strong></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <h4>🏛️ 建筑与空间</h4>
-      <sub><strong>25 cases</strong></sub><br>
+      <p><strong>🏛️ 建筑与空间</strong><br><sub>25 cases</sub></p>
       <a href="docs/gallery.md#cat-architecture"><img src="data/images/category-covers/architecture.jpg" alt="建筑与空间" width="220"></a><br>
       <sub>建筑表现、室内空间、城市地图和空间概念。</sub><br>
       <a href="docs/gallery.md#cat-architecture"><strong>查看案例</strong></a>
@@ -88,22 +82,19 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
   </tr>
   <tr>
     <td width="33%" valign="top" align="center">
-      <h4>📷 摄影与写实</h4>
-      <sub><strong>34 cases</strong></sub><br>
+      <p><strong>📷 摄影与写实</strong><br><sub>34 cases</sub></p>
       <a href="docs/gallery.md#cat-photo"><img src="data/images/category-covers/photo.jpg" alt="摄影与写实" width="220"></a><br>
       <sub>人像、手机纪实、胶片质感和商业摄影。</sub><br>
       <a href="docs/gallery.md#cat-photo"><strong>查看案例</strong></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <h4>🎨 插画与艺术</h4>
-      <sub><strong>25 cases</strong></sub><br>
+      <p><strong>🎨 插画与艺术</strong><br><sub>25 cases</sub></p>
       <a href="docs/gallery.md#cat-illustration"><img src="data/images/category-covers/illustration.jpg" alt="插画与艺术" width="220"></a><br>
       <sub>插画、艺术风格、材质实验和装饰画面。</sub><br>
       <a href="docs/gallery.md#cat-illustration"><strong>查看案例</strong></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <h4>🧍 人物与角色</h4>
-      <sub><strong>14 cases</strong></sub><br>
+      <p><strong>🧍 人物与角色</strong><br><sub>14 cases</sub></p>
       <a href="docs/gallery.md#cat-character"><img src="data/images/category-covers/character.jpg" alt="人物与角色" width="220"></a><br>
       <sub>角色设定、动作参考、卡牌和 3D 玩具。</sub><br>
       <a href="docs/gallery.md#cat-character"><strong>查看案例</strong></a>
@@ -111,22 +102,19 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
   </tr>
   <tr>
     <td width="33%" valign="top" align="center">
-      <h4>🎬 场景与叙事</h4>
-      <sub><strong>7 cases</strong></sub><br>
+      <p><strong>🎬 场景与叙事</strong><br><sub>7 cases</sub></p>
       <a href="docs/gallery.md#cat-scene"><img src="data/images/category-covers/scene.jpg" alt="场景与叙事" width="220"></a><br>
       <sub>分镜、故事场景、直播画面和世界观叙事。</sub><br>
       <a href="docs/gallery.md#cat-scene"><strong>查看案例</strong></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <h4>🏮 历史与古风题材</h4>
-      <sub><strong>9 cases</strong></sub><br>
+      <p><strong>🏮 历史与古风题材</strong><br><sub>9 cases</sub></p>
       <a href="docs/gallery.md#cat-history"><img src="data/images/category-covers/history.jpg" alt="历史与古风题材" width="220"></a><br>
       <sub>古风长卷、历史人物、传统题材和诗词画面。</sub><br>
       <a href="docs/gallery.md#cat-history"><strong>查看案例</strong></a>
     </td>
     <td width="33%" valign="top" align="center">
-      <h4>📚 文档与出版物</h4>
-      <sub><strong>7 cases</strong></sub><br>
+      <p><strong>📚 文档与出版物</strong><br><sub>7 cases</sub></p>
       <a href="docs/gallery.md#cat-document"><img src="data/images/category-covers/document.jpg" alt="文档与出版物" width="220"></a><br>
       <sub>白皮书、手册、百科图鉴和出版页设计。</sub><br>
       <a href="docs/gallery.md#cat-document"><strong>查看案例</strong></a>
@@ -134,8 +122,7 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
   </tr>
   <tr>
     <td width="33%" valign="top" align="center">
-      <h4>🧪 其他应用场景</h4>
-      <sub><strong>20 cases</strong></sub><br>
+      <p><strong>🧪 其他应用场景</strong><br><sub>20 cases</sub></p>
       <a href="docs/gallery.md#cat-other"><img src="data/images/category-covers/other.jpg" alt="其他应用场景" width="220"></a><br>
       <sub>创意实验、特殊任务、混合玩法和实用场景。</sub><br>
       <a href="docs/gallery.md#cat-other"><strong>查看案例</strong></a>
