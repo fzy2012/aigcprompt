@@ -1,6 +1,6 @@
 <p align="center"><img src="./data/images/banner.svg" alt="GPT-Image2 Prompt System" width="800" /></p>
 
-<h3 align="center">Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，370+ 个案例逆向工程，20+ 套工业级模板</h3>
+<h3 align="center">Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，370+ 个案例逆向工程，18 套工业级模板</h3>
 
 <p align="center">
   <a href="https://github.com/freestylefly/awesome-gpt-image-2"><img src="https://img.shields.io/github/stars/freestylefly/awesome-gpt-image-2?style=flat-square&color=rgb(25%2C%20121%2C%20255)" alt="Stars"></a>
@@ -35,24 +35,52 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
 
 ## 🗂️ 分类概览
 
-- UI与界面：68
-- 图表与信息可视化：55
-- 海报与排版：71
-- 商品与电商：24
-- 品牌与标志：19
-- 建筑与空间：25
-- 摄影与写实：34
-- 插画与艺术：25
-- 人物与角色：14
-- 场景与叙事：7
-- 历史与古风题材：9
-- 文档与出版物：7
-- 其他应用场景：20
+按产出类型浏览，点击即可进入对应分类的提示词模板；需要逐条看案例，可进入 [完整案例总览](docs/gallery.md)。
 
-需要按案例细看，直接进：
+<details open>
+<summary><strong>Page 1 / 4：设计与信息</strong></summary>
 
-- [按册浏览完整画廊](docs/gallery.md)
-- [提示词模板总表](docs/templates.md)
+| 分类 | Cases | 提示词入口 | 适合场景 |
+|---|---:|---|---|
+| 🧩 UI与界面 | 68 | [查看提示词](docs/templates.md#tpl-ui) | App、网页、仪表盘、截图界面 |
+| 📊 图表与信息可视化 | 55 | [查看提示词](docs/templates.md#tpl-infographic) | 信息图、知识图谱、数据解释 |
+| 📰 海报与排版 | 71 | [查看提示词](docs/templates.md#tpl-poster) | 活动海报、封面、字体视觉 |
+
+</details>
+
+<details>
+<summary><strong>Page 2 / 4：商业与空间</strong></summary>
+
+| 分类 | Cases | 提示词入口 | 适合场景 |
+|---|---:|---|---|
+| 🛍️ 商品与电商 | 24 | [查看提示词](docs/templates.md#tpl-product) | 商品图、详情页、包装卖点 |
+| 🏷️ 品牌与标志 | 19 | [查看提示词](docs/templates.md#tpl-brand) | Logo、VI、品牌触点系统 |
+| 🏛️ 建筑与空间 | 25 | [查看提示词](docs/templates.md#tpl-architecture) | 建筑表现、室内空间、城市想象 |
+
+</details>
+
+<details>
+<summary><strong>Page 3 / 4：影像与角色</strong></summary>
+
+| 分类 | Cases | 提示词入口 | 适合场景 |
+|---|---:|---|---|
+| 📷 摄影与写实 | 34 | [查看提示词](docs/templates.md#tpl-photo) | 写真人像、手机纪实、商业摄影 |
+| 🎨 插画与艺术 | 25 | [查看提示词](docs/templates.md#tpl-illustration) | 插画、材质风格、艺术创作 |
+| 🧍 人物与角色 | 14 | [查看提示词](docs/templates.md#tpl-character) | 角色设定、动作参考、3D 玩具 |
+
+</details>
+
+<details>
+<summary><strong>Page 4 / 4：叙事与扩展</strong></summary>
+
+| 分类 | Cases | 提示词入口 | 适合场景 |
+|---|---:|---|---|
+| 🎬 场景与叙事 | 7 | [查看提示词](docs/templates.md#tpl-scene) | 分镜、故事场景、世界观画面 |
+| 🏮 历史与古风题材 | 9 | [查看提示词](docs/templates.md#tpl-history) | 古风长卷、历史人物、传统视觉 |
+| 📚 文档与出版物 | 7 | [查看提示词](docs/templates.md#tpl-document) | 白皮书、手册、出版页设计 |
+| 🧪 其他应用场景 | 20 | [查看提示词](docs/templates.md#tpl-other) | 创意实验、混合玩法、特殊任务 |
+
+</details>
 
 <a name="section-gallery"></a>
 
@@ -180,18 +208,56 @@ GPT-Image2 全量开放后，AI 画图从“能不能出图”变成了“能不
 
 ## 🧩 模板入口
 
-完整模板已移到 [`docs/templates.md`](docs/templates.md)。这里保留最核心的使用方式：
+完整模板已移到 [`docs/templates.md`](docs/templates.md)。首页保留分页式索引，方便直接跳到对应提示词。
 
 1. 先明确任务类型：UI、海报、电商、信息图、角色设定、出版物。
 2. 再锁定结构约束：比例、布局、模块数量、镜头语言、文字要求。
 3. 最后补风格和材质：色彩、光线、笔触、氛围、材质、质感。
 
-如果是给 Agent 或脚本调用，优先看：
+<details open>
+<summary><strong>模板 Page 1 / 4：设计与信息模板</strong></summary>
 
-- [UI 与界面模板](docs/templates.md#tpl-ui)
-- [信息图模板](docs/templates.md#tpl-infographic)
-- [海报模板](docs/templates.md#tpl-poster)
-- [摄影模板](docs/templates.md#tpl-photo)
+| 图标 | 模板分类 | 入口 | 核心能力 |
+|---|---|---|---|
+| 🧩 | UI 与界面模板 | [打开](docs/templates.md#tpl-ui) | 组件、页面层级、截图质感 |
+| 📊 | 信息图模板 | [打开](docs/templates.md#tpl-infographic) | 模块、箭头、数据结构、可读性 |
+| 📰 | 海报模板 | [打开](docs/templates.md#tpl-poster) | 版式、标题、人物和视觉冲击 |
+
+</details>
+
+<details>
+<summary><strong>模板 Page 2 / 4：商业与空间模板</strong></summary>
+
+| 图标 | 模板分类 | 入口 | 核心能力 |
+|---|---|---|---|
+| 🛍️ | 商品与电商模板 | [打开](docs/templates.md#tpl-product) | 产品卖点、包装、详情页结构 |
+| 🏷️ | 品牌与标志模板 | [打开](docs/templates.md#tpl-brand) | Logo、品牌身份、触点系统 |
+| 🏛️ | 建筑与空间模板 | [打开](docs/templates.md#tpl-architecture) | 透视、材质、室内外光线 |
+
+</details>
+
+<details>
+<summary><strong>模板 Page 3 / 4：影像与角色模板</strong></summary>
+
+| 图标 | 模板分类 | 入口 | 核心能力 |
+|---|---|---|---|
+| 📷 | 摄影模板 | [打开](docs/templates.md#tpl-photo) | 镜头、光线、真实纹理 |
+| 🎨 | 插画与艺术模板 | [打开](docs/templates.md#tpl-illustration) | 笔触、材质、艺术风格 |
+| 🧍 | 人物与角色模板 | [打开](docs/templates.md#tpl-character) | 人设、动作表、角色一致性 |
+
+</details>
+
+<details>
+<summary><strong>模板 Page 4 / 4：叙事与扩展模板</strong></summary>
+
+| 图标 | 模板分类 | 入口 | 核心能力 |
+|---|---|---|---|
+| 🎬 | 场景与叙事模板 | [打开](docs/templates.md#tpl-scene) | 分镜、世界观、情绪铺陈 |
+| 🏮 | 历史与古风模板 | [打开](docs/templates.md#tpl-history) | 朝代、服饰、长卷叙事 |
+| 📚 | 文档与出版物模板 | [打开](docs/templates.md#tpl-document) | 页面系统、目录、版面规范 |
+| 🧪 | 其他应用模板 | [打开](docs/templates.md#tpl-other) | 混合任务、实验玩法、特殊输出 |
+
+</details>
 
 ## 🚀 怎么用这个库
 

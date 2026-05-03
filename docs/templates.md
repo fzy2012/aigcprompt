@@ -295,6 +295,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 - **信息克制**：遵循“少而准”原则，底部信息区只使用四列极简布局，避免信息拥挤和视觉混乱。
 - **风格统一**：严格遵循 Apple 式极简风格，使用纯白背景、干净排版和柔和棚拍光影，避免传统信息图的卡片、圆角框等元素。
 
+<a name="tpl-product"></a>
+
 ### 商品与电商
 
 **常规模板**
@@ -375,6 +377,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 - **先分析再出图**：美妆推荐类不要直接让模型摆色号，先要求它分析肤色、气质、唇部基础，再把结论映射到色号推荐。
 - **品牌只做点缀**：品牌调性应该体现在细线、强调色、字体气质和光影里，不要把 logo 或大色块铺满画面。
 - **试色矩阵要锁定同一张脸**：明确“同一张脸，仅唇色变化”，否则模型容易把每个色号都画成不同的人。
+
+<a name="tpl-brand"></a>
 
 ### 品牌与标志
 
@@ -471,6 +475,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 - **Logo 必须看应用场景**：要求同时展示名片、App 图标、网站、广告牌等触点，能快速发现缩小后不可读、横竖比例不适配等问题。
 - **品牌手册要写禁用规则**：除了给颜色和字体，也要写“不要怎么用”，否则后续延展很容易把统一性弄丢。
 
+<a name="tpl-architecture"></a>
+
 ### 建筑与空间
 
 **常规模板**
@@ -559,6 +565,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 - **用参数说话**：用 `f/1.4` 代替“浅景深”，用 `50mm` 代替“半身照”，大模型吃这套。
 - **把“不完美”写具体**：写“粗糙石砖、散落冰块、自然阴影、轻微手持感”，比只写“真实”更稳定。
 
+<a name="tpl-illustration"></a>
+
 ### 插画与艺术
 
 **常规模板**
@@ -591,6 +599,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 
 - **锁定笔触**：插画如果不限制笔触（如“厚涂”、“水彩晕染”），它通常会给你一种毫无灵魂的 AI 默认塑料风。
 - **慎用大师名**：提大师名字很爽，但容易被模型原样照搬其代表作的构图。建议提取大师的特征（如“梵高的旋转星空笔触”），而不是直接写大师名。
+
+<a name="tpl-character"></a>
 
 ### 人物与角色
 
@@ -658,6 +668,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 - **玩具化要保留身份锚点**：先锁脸型、发型、服装识别点，再写大头比例和材质，能减少“变成另一个人”的概率。
 - **角色一致性前置**：动作序列越长越容易换脸换衣服，要把“同一角色、同一服装、同比例”写在动作列表之前。
 
+<a name="tpl-scene"></a>
+
 ### 场景与叙事
 
 **常规模板**
@@ -690,6 +702,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 
 - **要有“动词”**：叙事图最怕画成风景明信片。一定要写“事件”（如“正在崩塌”、“刚点燃火把”），让画面动起来。
 - **镜头语言**：使用“Low angle shot（低角度仰拍）”或“Dutch angle（倾斜镜头）”来增加戏剧冲突。
+
+<a name="tpl-history"></a>
 
 ### 历史与古风题材
 
@@ -724,6 +738,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 
 - **拒绝大杂烩**：明确朝代（唐/宋/明），否则大模型会给你画出一个穿着和服、拿着清朝折扇在唐朝宫殿里的人。
 - **强制排雷**：一定要加上“禁用现代元素（No modern elements）”，防止古风美女手里突然多出一杯星巴克。
+
+<a name="tpl-document"></a>
 
 ### 文档与出版物
 
@@ -761,6 +777,8 @@ Avoid generic word art, glossy 3D lettering, random icons, stock-photo realism, 
 
 - **结构优先**：明确“栏数（columns）”和“留白（margins）”比堆砌风格词更重要。
 - **放弃全文**：不要指望大模型能排出一整页毫无错字的正文，让它用“模拟文本（Simulated text blocks）”填充正文，只写死大标题。
+
+<a name="tpl-other"></a>
 
 ### 其他应用场景
 
