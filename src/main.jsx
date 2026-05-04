@@ -19,7 +19,7 @@ const copy = {
     brand: 'GPT-Image2 Gallery',
     navCases: 'Cases',
     eyebrow: 'Live GPT-Image2 prompt gallery',
-    title: 'Browse viral GPT-Image2 cases like a product catalog.',
+    title: 'From viral images to reusable prompts.',
     subtitle:
       'A visual front door for the awesome-gpt-image-2 repository: copy production-ready prompts, filter by style or scene, and jump straight into the GitHub source.',
     explore: 'Explore cases',
@@ -46,7 +46,7 @@ const copy = {
     brand: 'GPT-Image2 画廊',
     navCases: '案例',
     eyebrow: '实时更新的 GPT-Image2 提示词画廊',
-    title: '像逛产品目录一样浏览 GPT-Image2 爆款案例。',
+    title: '从爆款图片，到可复用 Prompt。',
     subtitle:
       '这是 awesome-gpt-image-2 的可视化入口：复制可直接复用的 Prompt，按风格或场景筛选，并一键跳转到 GitHub 源项目。',
     explore: '浏览案例',
