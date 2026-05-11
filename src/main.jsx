@@ -35,6 +35,11 @@ const dailySiteUrl = 'https://daily.ruhang365.cn';
 const pathSiteUrl = 'https://rhzl.ruhang365.cn';
 const toolsSiteUrl = 'https://smzdy.ruhang365.cn';
 const centerSiteUrl = 'https://ruhangcenter.ruhang365.cn';
+const subSiteUrl = 'https://sub.ruhang365.cn';
+const adpcSiteUrl = 'https://adpc.ruhang365.cn';
+const botSkillsSiteUrl = 'https://botskills.ruhang365.cn';
+const botGuideSiteUrl = 'https://botguide.ruhang365.cn';
+const codeGuideSiteUrl = 'https://ruhangcodeguide.ruhang365.cn';
 const galleryPageUrl = '/gallery.html';
 const templatePageUrl = '/templates.html';
 const legalPageUrl = '/legal.html';
@@ -66,17 +71,21 @@ const copy = {
     openTemplate: 'View Template Docs',
     openTemplatePage: 'Open template page',
     skillEyebrow: 'Ecosystem',
-    skillTitle: 'Move from prompt inspiration to tools, learning, and account services.',
+    skillTitle: 'Ruhang365 Product Matrix',
     skillSubtitle:
-      'This site focuses on prompts and examples. The broader Ruhang365 network continues the journey with tools, daily updates, learning paths, and personal account services.',
-    skillCommandLabel: 'Best use cases',
+      'All sites in this matrix belong to the Ruhang365 ecosystem. Each one handles a clear job so users can move from prompts into tools, learning, publishing, and account services.',
+    skillCommandLabel: 'How to use the matrix',
     skillPromptLabel: 'Suggested path',
-    skillPrompt: 'Find a case here, refine it with a template, then continue to tools, daily updates, or your account center.',
-    skillStats: ['400+ cases', '20+ templates', 'Ruhang365 linked'],
+    skillPrompt: 'Start from cases and templates here, then continue into the Ruhang365 matrix based on whether you need tools, learning, news, or account services.',
+    skillStats: ['Main apps', 'Branch apps', 'Content apps'],
     skillOpenDocs: 'Open main site',
     skillNpm: 'Open account center',
-    skillExampleAlt: 'Curated prompt collection preview',
-    skillExampleCaption: 'Curated cases and templates continue to grow with the Ruhang365 content system.',
+    skillExampleAlt: 'Ruhang365 product matrix',
+    skillExampleCaption: 'Each official site has a focused job inside the Ruhang365 ecosystem.',
+    picksEyebrow: 'Official picks',
+    picksTitle: 'Ruhang365 Selected',
+    picksSubtitle:
+      'These are third-party links officially selected by Ruhang365. Each one is included for a clear reference value beyond the official product matrix.',
     search: 'Search cases, sources, prompts...',
     category: 'Category',
     style: 'Style',
@@ -203,17 +212,21 @@ const copy = {
     openTemplate: '查看模板文档',
     openTemplatePage: '打开模板页',
     skillEyebrow: '产品矩阵',
-    skillTitle: '从提示词集合出发，继续进入工具、学习、日报和个人中心。',
+    skillTitle: '入行365 产品矩阵',
     skillSubtitle:
-      '这个站点负责沉淀案例与模板，入行365 站群继续承接工具推荐、学习路径、资讯更新和账号服务。',
-    skillCommandLabel: '适合这样用',
+      '这里展示的是入行365体系内的官方站点矩阵。每个站点负责一个明确方向，方便用户从提示词继续走向工具、学习、资讯和账号服务。',
+    skillCommandLabel: '矩阵使用方式',
     skillPromptLabel: '推荐路径',
-    skillPrompt: '先在这里找案例和模板，再去工具站选工具、去日报追更新、去个人中心沉淀账号与权益。',
-    skillStats: ['400+ 案例', '20+ 模板', '已接入站群'],
+    skillPrompt: '先在这里找案例和模板，再根据需求进入矩阵里的工具站、学习站、资讯站或个人中心。',
+    skillStats: ['主应用矩阵', '分支应用', '资讯型应用'],
     skillOpenDocs: '打开官网',
     skillNpm: '打开个人中心',
-    skillExampleAlt: '提示词集合精选预览',
-    skillExampleCaption: '精选案例与模板会持续纳入入行365 的内容更新体系。',
+    skillExampleAlt: '入行365 产品矩阵',
+    skillExampleCaption: '每个官方站点都承担清晰职责，共同构成入行365 的产品矩阵。',
+    picksEyebrow: '官方精选',
+    picksTitle: '入行365 精选专区',
+    picksSubtitle:
+      '这里收录的是经过入行365 官方挑选的第三方内容入口，不属于官方产品矩阵，但有明确参考价值。',
     search: '搜索案例、来源、Prompt...',
     category: '分类',
     style: '风格',
@@ -1478,18 +1491,28 @@ function EcosystemSection({ language }) {
   const t = copy[language];
   const linkCards = language === 'zh'
     ? [
-        { title: '入行365官网', description: '查看主站定位、社区与品牌入口。', href: officialSiteUrl },
-        { title: '入行365日报', description: '跟进 AI 资讯、趋势与精选内容。', href: dailySiteUrl },
-        { title: '入行之路', description: '继续进入学习路径和行动建议。', href: pathSiteUrl },
-        { title: '什么值得用', description: '根据场景继续挑选 AI 工具。', href: toolsSiteUrl },
-        { title: '个人中心', description: '沉淀账号、权益与后续服务。', href: centerSiteUrl }
+        { title: '入行365官网', description: '主应用：查看品牌主站、社区方向和核心产品入口。', href: officialSiteUrl },
+        { title: '入行365日报', description: '主应用：跟进 AI 热点、趋势解读和每日精选内容。', href: dailySiteUrl },
+        { title: '入行之路', description: '主应用：帮助用户梳理学习路径、行动步骤和入门方向。', href: pathSiteUrl },
+        { title: '什么值得用', description: '主应用：按场景挑选值得用的 AI 工具和效率产品。', href: toolsSiteUrl },
+        { title: '入行个人中心', description: '主应用：统一管理账号、权益、会员能力和后续服务。', href: centerSiteUrl },
+        { title: 'AI 订阅后悔药', description: '分支应用：帮助用户管理和优化 AI 订阅决策。', href: subSiteUrl },
+        { title: 'agent 学习', description: '资讯型应用：聚焦 Agent 学习内容、资料和方法路径。', href: adpcSiteUrl },
+        { title: 'openclaw skills集合', description: '资讯型应用：集中整理 openclaw 可用的 skills 资源。', href: botSkillsSiteUrl },
+        { title: 'openclaw 指南', description: '资讯型应用：提供 openclaw 的使用说明与实践指南。', href: botGuideSiteUrl },
+        { title: 'AI coding 指南', description: '资讯型应用：聚焦 AI Coding 的工具、流程和上手指南。', href: codeGuideSiteUrl }
       ]
     : [
-        { title: 'Ruhang365', description: 'Visit the main site and brand hub.', href: officialSiteUrl },
-        { title: 'Daily', description: 'Follow AI news, trends, and curation.', href: dailySiteUrl },
-        { title: 'Path', description: 'Continue into learning paths and next steps.', href: pathSiteUrl },
-        { title: 'Tools', description: 'Choose AI tools for your workflow.', href: toolsSiteUrl },
-        { title: 'Center', description: 'Manage account, benefits, and services.', href: centerSiteUrl }
+        { title: 'Ruhang365', description: 'Main app: the brand hub and primary product entry.', href: officialSiteUrl },
+        { title: 'Daily', description: 'Main app: follow AI news, trends, and daily curation.', href: dailySiteUrl },
+        { title: 'Path', description: 'Main app: find learning paths and practical next steps.', href: pathSiteUrl },
+        { title: 'Tools', description: 'Main app: choose recommended AI tools by scenario.', href: toolsSiteUrl },
+        { title: 'Center', description: 'Main app: manage account access, benefits, and services.', href: centerSiteUrl },
+        { title: 'AI Subscription Relief', description: 'Branch app: help users review and optimize AI subscriptions.', href: subSiteUrl },
+        { title: 'Agent Learning', description: 'Content app: focused on Agent learning materials and paths.', href: adpcSiteUrl },
+        { title: 'OpenClaw Skills', description: 'Content app: collect usable OpenClaw skills resources.', href: botSkillsSiteUrl },
+        { title: 'OpenClaw Guide', description: 'Content app: explain OpenClaw usage and practical guidance.', href: botGuideSiteUrl },
+        { title: 'AI Coding Guide', description: 'Content app: cover AI coding tools, workflows, and guides.', href: codeGuideSiteUrl }
       ];
 
   return (
@@ -1517,8 +1540,8 @@ function EcosystemSection({ language }) {
             </div>
             <code>
               {language === 'zh'
-                ? '1. 先按分类和风格找到接近的案例。\n2. 复制 Prompt 或进入模板页改写。\n3. 再进入工具、日报或学习路径继续完成后续动作。'
-                : '1. Start with a case close to your goal.\n2. Copy the prompt or move into the template page.\n3. Continue into tools, daily updates, or learning paths for the next step.'}
+                ? '1. 先在本站找到接近的案例或模板。\n2. 再按需求进入矩阵里的工具站、学习站、资讯站或个人中心。\n3. 所有这里展示的链接都属于入行365官方体系。'
+                : '1. Start with a relevant case or template here.\n2. Then continue into the matrix for tools, learning, content, or account services.\n3. Every link shown here belongs to the official Ruhang365 ecosystem.'}
             </code>
           </div>
           <div className="skillPrompt">
@@ -1536,20 +1559,68 @@ function EcosystemSection({ language }) {
             </a>
           </div>
         </div>
-        <figure className="skillPreview">
-          <img src="/images/case310.jpg" alt={t.skillExampleAlt} loading="lazy" />
-          <figcaption>
+        <div className="skillPreview matrixBoard" aria-label={t.skillExampleAlt}>
+          <div className="matrixBoardHead">
             <Sparkles size={15} />
             <span>{t.skillExampleCaption}</span>
-          </figcaption>
-          <figcaption>
-            {linkCards.slice(0, 3).map((item) => (
-              <a href={item.href} target="_blank" rel="noreferrer" key={item.href}>
-                {item.title}
+          </div>
+          <div className="matrixMiniGrid">
+            {linkCards.map((item) => (
+              <a className="matrixMiniCard" href={item.href} target="_blank" rel="noreferrer" key={item.href}>
+                <div className="matrixMiniCardTop">
+                  <strong>{item.title}</strong>
+                  <ArrowUpRight size={15} />
+                </div>
+                <p>{item.description}</p>
               </a>
             ))}
-          </figcaption>
-        </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SelectedLinksSection({ language }) {
+  const t = copy[language];
+  const items = language === 'zh'
+    ? [
+        {
+          title: 'QiaoBit.com',
+          href: 'https://qiaobit.com',
+          description: '聚焦 AI、科技数码和新能源汽车的科技内容与产品创作平台。'
+        }
+      ]
+    : [
+        {
+          title: 'QiaoBit.com',
+          href: 'https://qiaobit.com',
+          description: 'A tech creator platform focused on AI, consumer tech, and new energy vehicles.'
+        }
+      ];
+
+  return (
+    <section className="selectedSection" id="selected">
+      <div className="sectionHead selectedHead">
+        <div>
+          <span className="eyebrow">
+            <Sparkles size={16} />
+            {t.picksEyebrow}
+          </span>
+          <h2>{t.picksTitle}</h2>
+          <p>{t.picksSubtitle}</p>
+        </div>
+      </div>
+      <div className="selectedGrid">
+        {items.map((item) => (
+          <a className="selectedCard" href={item.href} target="_blank" rel="noreferrer" key={item.href}>
+            <div className="selectedCardTop">
+              <strong>{item.title}</strong>
+              <ArrowUpRight size={16} />
+            </div>
+            <p>{item.description}</p>
+          </a>
+        ))}
       </div>
     </section>
   );
@@ -2325,6 +2396,7 @@ function App() {
       />
 
       <EcosystemSection language={language} />
+      <SelectedLinksSection language={language} />
       <PreviewDialog
         preview={preview}
         language={language}
