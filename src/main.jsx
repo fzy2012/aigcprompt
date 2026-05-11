@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowUpRight,
-  Bot,
   ChevronDown,
   Check,
   Coins,
@@ -22,7 +21,6 @@ import {
   Search,
   ShieldCheck,
   Sparkles,
-  Terminal,
   UserCircle,
   Users,
   WandSparkles,
@@ -30,55 +28,62 @@ import {
 } from 'lucide-react';
 import './styles.css';
 import { isSupabaseConfigured, supabase } from './supabaseClient';
-import skillExampleImage from '../agents/skills/gpt-image-2-style-library/assets/city-life-system-map.png';
 
-const fallbackRepoUrl = 'https://github.com/freestylefly/awesome-gpt-image-2';
+const fallbackRepoUrl = 'https://github.com/fzy2012/aigcprompt';
+const officialSiteUrl = 'https://ruhang365.cn';
+const dailySiteUrl = 'https://daily.ruhang365.cn';
+const pathSiteUrl = 'https://rhzl.ruhang365.cn';
+const toolsSiteUrl = 'https://smzdy.ruhang365.cn';
+const centerSiteUrl = 'https://ruhangcenter.ruhang365.cn';
+const galleryPageUrl = '/gallery.html';
+const templatePageUrl = '/templates.html';
+const legalPageUrl = '/legal.html';
 
 const copy = {
   en: {
-    loading: 'Loading GPT-Image2 cases...',
-    brand: 'GPT-Image2 Gallery',
+    loading: 'Loading AIGC prompt cases...',
+    brand: 'AIGC Prompt',
     navCases: 'Cases',
-    navSkill: 'Skill',
+    navSkill: 'Matrix',
     navTemplates: 'Templates',
-    eyebrow: 'Live GPT-Image2 prompt gallery',
-    title: 'From viral images to reusable prompts.',
+    navOfficial: 'Ruhang365',
+    eyebrow: 'Ruhang365 AIGC prompt collection',
+    title: 'Browse cases, copy prompts, and keep building from templates.',
     subtitle:
-      'A visual front door for the awesome-gpt-image-2 repository: copy production-ready prompts, filter by style or scene, and jump straight into the GitHub source.',
+      'This site is the prompt and case library inside the Ruhang365 ecosystem. Start with visual cases, filter by style or scene, and continue to reusable templates and learning paths.',
     explore: 'Explore cases',
-    githubProject: 'GitHub project',
+    githubProject: 'Open templates',
     cases: 'cases',
     categories: 'categories',
     templates: 'templates',
-    sectionEyebrow: 'Copy, filter, remix',
-    sectionTitle: 'Viral cases with prompts one click away.',
-    templateEyebrow: '20+ industrial prompt templates',
-    templateTitle: 'Start from a proven template, then remix the case library.',
+    sectionEyebrow: 'Browse, filter, refine',
+    sectionTitle: 'A prompt library built for faster visual production.',
+    templateEyebrow: 'Template library',
+    templateTitle: 'Start from a reusable structure instead of writing from scratch.',
     templateSubtitle:
-      'Each template is distilled from real GPT-Image2 examples and includes structure, constraints, and pitfalls for production use.',
+      'Each template is extracted from real cases and focuses on reusable structure, key constraints, and common failure points.',
     templateKind: 'Prompt Template',
-    openTemplate: 'Open Template',
-    skillEyebrow: 'Agent skill',
-    skillTitle: 'Bring the GPT-Image2 style library into Claude Code and Codex.',
+    openTemplate: 'View Template Docs',
+    openTemplatePage: 'Open template page',
+    skillEyebrow: 'Ecosystem',
+    skillTitle: 'Move from prompt inspiration to tools, learning, and account services.',
     skillSubtitle:
-      'Install one skill, then let your agent choose templates, visual styles, scene tags, and pitfalls from the same library behind this site.',
-    skillCommandLabel: 'Install for local agents',
-    skillPromptLabel: 'Try this request',
-    skillPrompt: 'Use gpt-image-2-style-library to create a city life system map.',
-    skillCopyCommand: 'Copy command',
-    skillOpenDocs: 'Open skill source',
-    skillNpm: 'View npm package',
-    skillCopied: 'Command copied',
-    skillExampleAlt: 'City life system map generated with the GPT-Image2 style library skill',
-    skillExampleCaption: 'Example output generated from the style-library skill.',
-    skillStats: ['Claude Code ready', 'Codex ready', '20+ templates'],
+      'This site focuses on prompts and examples. The broader Ruhang365 network continues the journey with tools, daily updates, learning paths, and personal account services.',
+    skillCommandLabel: 'Best use cases',
+    skillPromptLabel: 'Suggested path',
+    skillPrompt: 'Find a case here, refine it with a template, then continue to tools, daily updates, or your account center.',
+    skillStats: ['400+ cases', '20+ templates', 'Ruhang365 linked'],
+    skillOpenDocs: 'Open main site',
+    skillNpm: 'Open account center',
+    skillExampleAlt: 'Curated prompt collection preview',
+    skillExampleCaption: 'Curated cases and templates continue to grow with the Ruhang365 content system.',
     search: 'Search cases, sources, prompts...',
     category: 'Category',
     style: 'Style',
     scene: 'Scene',
     all: 'All',
     matching: 'matching cases',
-    openGithub: 'Open GitHub project',
+    openGallery: 'Open full gallery',
     copied: 'Copied',
     copyPrompt: 'Copy Prompt',
     copyTemplatePrompt: 'Copy Template',
@@ -135,7 +140,7 @@ const copy = {
     monthlyCredits: (count) => `${count} credits / month`,
     packCredits: (count) => `${count} credits`,
     billingTitle: 'Membership & credits',
-    billingSubtitle: 'Members get monthly credits. Credit packs can be added anytime for more GPT-Image2 tests.',
+    billingSubtitle: 'Members receive monthly credits. Credit packs can be added anytime for more visual generation tests.',
     balanceTitle: 'Current balance',
     transactionHistory: 'Credit history',
     noTransactions: 'No credit history yet.',
@@ -169,53 +174,53 @@ const copy = {
     pitfalls: 'Pitfalls',
     examples: 'Example Cases',
     source: 'Source',
-    openOnGithub: 'Open on GitHub',
+    openOnGithub: 'Open source doc',
     limit: (count) => `Showing the first ${count} results for speed. Use search or filters to narrow the gallery.`
   },
   zh: {
-    loading: '正在加载 GPT-Image2 案例...',
-    brand: 'GPT-Image2 画廊',
+    loading: '正在加载提示词案例...',
+    brand: 'AIGC Prompt',
     navCases: '案例',
-    navSkill: '技能',
+    navSkill: '矩阵',
     navTemplates: '模板',
-    eyebrow: '实时更新的 GPT-Image2 提示词画廊',
-    title: '从爆款图片，到可复用 Prompt。',
+    navOfficial: '入行365',
+    eyebrow: '入行365 旗下 AIGC 提示词集合',
+    title: '把案例、模板和学习入口放到同一个工作台。',
     subtitle:
-      '这是 awesome-gpt-image-2 的可视化入口：复制可直接复用的 Prompt，按风格或场景筛选，并一键跳转到 GitHub 源项目。',
+      '这里聚合了可复用的视觉案例、提示词和模板。你可以按分类、风格、场景快速找灵感，再继续进入模板页、工具站和学习路径。',
     explore: '浏览案例',
-    githubProject: 'GitHub 项目',
+    githubProject: '进入模板页',
     cases: '个案例',
     categories: '个分类',
     templates: '套模板',
-    sectionEyebrow: '复制、筛选、复用',
-    sectionTitle: '爆款案例和 Prompt，一键可取。',
-    templateEyebrow: '20+ 套工业级提示词模板',
-    templateTitle: '先用成熟模板起稿，再从案例库里继续 remix。',
+    sectionEyebrow: '浏览、筛选、复用',
+    sectionTitle: '面向真实创作流程的提示词案例库。',
+    templateEyebrow: '模板库',
+    templateTitle: '先选一套可复用结构，再继续改成你的版本。',
     templateSubtitle:
-      '每套模板都从真实 GPT-Image2 案例里提炼，包含结构、约束和防坑经验，适合生产流程直接复用。',
+      '每套模板都从真实案例中提炼，重点保留结构、关键约束和常见失败点，适合直接改写。',
     templateKind: '提示词模板',
-    openTemplate: '打开模板',
-    skillEyebrow: 'Agent Skill',
-    skillTitle: '把 GPT-Image2 风格库装进 Claude Code 和 Codex。',
+    openTemplate: '查看模板文档',
+    openTemplatePage: '打开模板页',
+    skillEyebrow: '产品矩阵',
+    skillTitle: '从提示词集合出发，继续进入工具、学习、日报和个人中心。',
     skillSubtitle:
-      '安装一个 skill，让 Agent 从本站同源的模板、风格、场景和防坑规则里自动选型，直接输出可复制的 GPT Image 2 prompt。',
-    skillCommandLabel: '安装到本地 Agent',
-    skillPromptLabel: '试试这个请求',
-    skillPrompt: '用 gpt-image-2-style-library 技能生成城市生命系统图谱',
-    skillCopyCommand: '复制命令',
-    skillOpenDocs: '打开 skill 源码',
-    skillNpm: '查看 npm 包',
-    skillCopied: '命令已复制',
-    skillExampleAlt: '使用 GPT-Image2 风格库 skill 生成的城市生命系统图谱',
-    skillExampleCaption: '示例：用 gpt-image-2-style-library 生成“城市生命系统图谱”。',
-    skillStats: ['Claude Code 可用', 'Codex 可用', '20+ 套模板'],
+      '这个站点负责沉淀案例与模板，入行365 站群继续承接工具推荐、学习路径、资讯更新和账号服务。',
+    skillCommandLabel: '适合这样用',
+    skillPromptLabel: '推荐路径',
+    skillPrompt: '先在这里找案例和模板，再去工具站选工具、去日报追更新、去个人中心沉淀账号与权益。',
+    skillStats: ['400+ 案例', '20+ 模板', '已接入站群'],
+    skillOpenDocs: '打开官网',
+    skillNpm: '打开个人中心',
+    skillExampleAlt: '提示词集合精选预览',
+    skillExampleCaption: '精选案例与模板会持续纳入入行365 的内容更新体系。',
     search: '搜索案例、来源、Prompt...',
     category: '分类',
     style: '风格',
     scene: '场景',
     all: '全部',
     matching: '个匹配案例',
-    openGithub: '打开 GitHub 项目',
+    openGallery: '打开完整画廊',
     copied: '已复制',
     copyPrompt: '复制 Prompt',
     copyTemplatePrompt: '复制模板',
@@ -272,7 +277,7 @@ const copy = {
     monthlyCredits: (count) => `每月 ${count} 积分`,
     packCredits: (count) => `${count} 积分`,
     billingTitle: '会员与积分',
-    billingSubtitle: '会员每月自动获得积分，也可以随时购买积分包，用来测试更多 GPT-Image2 案例。',
+    billingSubtitle: '会员每月自动获得积分，也可以随时购买积分包，用来测试更多图片生成与创作流程。',
     balanceTitle: '当前余额',
     transactionHistory: '积分流水',
     noTransactions: '暂无积分流水。',
@@ -306,7 +311,7 @@ const copy = {
     pitfalls: '防坑指南',
     examples: '关联案例',
     source: '来源',
-    openOnGithub: '在 GitHub 打开',
+    openOnGithub: '查看原始文档',
     limit: (count) => `为了保证浏览速度，当前展示前 ${count} 条结果。可以用搜索或筛选缩小范围。`
   }
 };
@@ -607,7 +612,7 @@ function formatTemplatePrompt(item, language, styleLibrary) {
   ].join('\n');
 }
 
-function Hero({ latestCases, language, repoUrl, totalCases, categoryCount, onOpenCase }) {
+function Hero({ latestCases, language, totalCases, categoryCount, onOpenCase }) {
   const t = copy[language];
 
   return (
@@ -627,8 +632,7 @@ function Hero({ latestCases, language, repoUrl, totalCases, categoryCount, onOpe
             {t.explore}
             <ArrowUpRight size={18} />
           </a>
-          <a className="secondaryAction" href={repoUrl} target="_blank" rel="noreferrer">
-            <Github size={18} />
+          <a className="secondaryAction" href={templatePageUrl}>
             {t.githubProject}
           </a>
         </div>
@@ -638,7 +642,7 @@ function Hero({ latestCases, language, repoUrl, totalCases, categoryCount, onOpe
           <span><strong>20+</strong> {t.templates}</span>
         </div>
       </div>
-      <div className="heroDeck" aria-label="Latest GPT-Image2 cases">
+      <div className="heroDeck" aria-label={language === 'zh' ? '最新案例' : 'Latest cases'}>
         {latestCases.slice(0, 5).map((caseItem, index) => (
           <button
             className={`heroCard heroCard${index + 1}`}
@@ -1470,33 +1474,34 @@ function BillingPanel({
   );
 }
 
-function SkillSection({ language, repoUrl }) {
+function EcosystemSection({ language }) {
   const t = copy[language];
-  const [commandCopied, setCommandCopied] = useState(false);
-  const installCommand =
-    'npx skills add freestylefly/awesome-gpt-image-2 --skill gpt-image-2-style-library --agent claude-code codex --global --yes --copy';
-  const skillSourceUrl = `${repoUrl}/tree/main/agents/skills/gpt-image-2-style-library`;
-  const npmUrl = 'https://www.npmjs.com/package/gpt-image-2-style-library';
-
-  async function handleCopyCommand() {
-    await copyToClipboard(installCommand);
-    setCommandCopied(true);
-    window.setTimeout(() => setCommandCopied(false), 1600);
-  }
+  const linkCards = language === 'zh'
+    ? [
+        { title: '入行365官网', description: '查看主站定位、社区与品牌入口。', href: officialSiteUrl },
+        { title: '入行365日报', description: '跟进 AI 资讯、趋势与精选内容。', href: dailySiteUrl },
+        { title: '入行之路', description: '继续进入学习路径和行动建议。', href: pathSiteUrl },
+        { title: '什么值得用', description: '根据场景继续挑选 AI 工具。', href: toolsSiteUrl },
+        { title: '个人中心', description: '沉淀账号、权益与后续服务。', href: centerSiteUrl }
+      ]
+    : [
+        { title: 'Ruhang365', description: 'Visit the main site and brand hub.', href: officialSiteUrl },
+        { title: 'Daily', description: 'Follow AI news, trends, and curation.', href: dailySiteUrl },
+        { title: 'Path', description: 'Continue into learning paths and next steps.', href: pathSiteUrl },
+        { title: 'Tools', description: 'Choose AI tools for your workflow.', href: toolsSiteUrl },
+        { title: 'Center', description: 'Manage account, benefits, and services.', href: centerSiteUrl }
+      ];
 
   return (
-    <section className="skillSection" id="agent-skill">
+    <section className="skillSection" id="ecosystem">
       <div className="skillGrid">
         <div className="skillCopy">
-          <span className="eyebrow">
-            <Bot size={16} />
-            {t.skillEyebrow}
-          </span>
+          <span className="eyebrow"><ShieldCheck size={16} />{t.skillEyebrow}</span>
           <h2>{t.skillTitle}</h2>
           <p>{t.skillSubtitle}</p>
           <div className="skillStats">
             {t.skillStats.map((item, index) => {
-              const icons = [Bot, Terminal, PackageCheck];
+              const icons = [Sparkles, Users, ShieldCheck];
               const Icon = icons[index] || Check;
               return (
                 <span key={item}>
@@ -1509,33 +1514,40 @@ function SkillSection({ language, repoUrl }) {
           <div className="skillCommand">
             <div className="skillCommandHeader">
               <strong>{t.skillCommandLabel}</strong>
-              <button type="button" onClick={handleCopyCommand}>
-                {commandCopied ? <Check size={16} /> : <Copy size={16} />}
-                {commandCopied ? t.skillCopied : t.skillCopyCommand}
-              </button>
             </div>
-            <code>{installCommand}</code>
+            <code>
+              {language === 'zh'
+                ? '1. 先按分类和风格找到接近的案例。\n2. 复制 Prompt 或进入模板页改写。\n3. 再进入工具、日报或学习路径继续完成后续动作。'
+                : '1. Start with a case close to your goal.\n2. Copy the prompt or move into the template page.\n3. Continue into tools, daily updates, or learning paths for the next step.'}
+            </code>
           </div>
           <div className="skillPrompt">
             <span>{t.skillPromptLabel}</span>
             <code>{t.skillPrompt}</code>
           </div>
           <div className="skillActions">
-            <a href={skillSourceUrl} target="_blank" rel="noreferrer">
-              <Github size={18} />
+            <a href={officialSiteUrl} target="_blank" rel="noreferrer">
+              <ShieldCheck size={18} />
               {t.skillOpenDocs}
             </a>
-            <a href={npmUrl} target="_blank" rel="noreferrer">
-              <PackageCheck size={18} />
+            <a href={centerSiteUrl} target="_blank" rel="noreferrer">
+              <Users size={18} />
               {t.skillNpm}
             </a>
           </div>
         </div>
         <figure className="skillPreview">
-          <img src={skillExampleImage} alt={t.skillExampleAlt} loading="lazy" />
+          <img src="/images/case310.jpg" alt={t.skillExampleAlt} loading="lazy" />
           <figcaption>
             <Sparkles size={15} />
-            {t.skillExampleCaption}
+            <span>{t.skillExampleCaption}</span>
+          </figcaption>
+          <figcaption>
+            {linkCards.slice(0, 3).map((item) => (
+              <a href={item.href} target="_blank" rel="noreferrer" key={item.href}>
+                {item.title}
+              </a>
+            ))}
           </figcaption>
         </figure>
       </div>
@@ -1556,8 +1568,8 @@ function TemplateSection({ language, styleLibrary, onOpenTemplate }) {
           <h2>{t.templateTitle}</h2>
           <p>{t.templateSubtitle}</p>
         </div>
-        <a className="templateCta" href={`${repoDocsUrl}#section-templates`} target="_blank" rel="noreferrer">
-          {t.openTemplate}
+        <a className="templateCta" href={templatePageUrl}>
+          {t.openTemplatePage}
           <ArrowUpRight size={16} />
         </a>
       </div>
@@ -1598,8 +1610,8 @@ function TemplateSection({ language, styleLibrary, onOpenTemplate }) {
                     <Eye size={17} />
                     {t.viewDetails}
                   </button>
-                  <a href={`${repoDocsUrl}#${item.anchor}`} target="_blank" rel="noreferrer">
-                    {t.openTemplate}
+                  <a href={templatePageUrl}>
+                    {t.openTemplatePage}
                     <ArrowUpRight size={17} />
                   </a>
                 </div>
@@ -1733,8 +1745,8 @@ function PreviewDialog({
   const promptText = isTemplate ? formatTemplatePrompt(item, language, styleLibrary) : editablePrompt;
   const copyId = isTemplate ? `template-${item.id}` : `case-${item.id}`;
   const isCopied = copiedId === copyId;
-  const primaryLink = isTemplate ? `${repoDocsUrl}#${item.anchor}` : item.githubUrl;
-  const primaryLabel = isTemplate ? t.openTemplate : t.openOnGithub;
+  const primaryLink = isTemplate ? templatePageUrl : item.githubUrl;
+  const primaryLabel = isTemplate ? t.openTemplatePage : t.openOnGithub;
   const meta = isTemplate
     ? [t.templateKind, localizeLabel(item.category, language, styleLibrary)]
     : [
@@ -1955,9 +1967,7 @@ function PreviewDialog({
                   <div className="exampleCaseRow">
                     {item.exampleCases.map((caseId) => (
                       <a
-                        href={`${styleLibrary.repository || fallbackRepoUrl}/blob/main/docs/gallery.md#case-${caseId}`}
-                        target="_blank"
-                        rel="noreferrer"
+                        href={galleryPageUrl}
                         key={caseId}
                       >
                         #{caseId}
@@ -1977,7 +1987,7 @@ function PreviewDialog({
 function App() {
   const [siteData, setSiteData] = useState(null);
   const [styleLibrary, setStyleLibrary] = useState(null);
-  const [language, setLanguage] = useState(() => localStorage.getItem('language') || 'en');
+  const [language, setLanguage] = useState(() => localStorage.getItem('language') || 'zh');
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [style, setStyle] = useState('All');
@@ -2013,6 +2023,18 @@ function App() {
   useEffect(() => {
     localStorage.setItem('language', language);
     document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
+  }, [language]);
+
+  useEffect(() => {
+    const title = language === 'zh'
+      ? '提示词集合 | 入行365旗下 AIGC 提示词案例库'
+      : 'AIGC Prompt Collection | Ruhang365';
+    const description = language === 'zh'
+      ? '入行365旗下的 AIGC 提示词案例库，支持按分类、风格、场景快速浏览案例，复制 Prompt，并继续进入模板页与站群入口。'
+      : 'Ruhang365 prompt collection for browsing visual cases, filtering by style or scene, copying prompts, and continuing into templates and ecosystem pages.';
+    document.title = title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) metaDescription.setAttribute('content', description);
   }, [language]);
 
   useEffect(() => {
@@ -2168,9 +2190,9 @@ function App() {
           <nav>
             <a href="#gallery">{t.navCases}</a>
             <a href="#templates">{t.navTemplates}</a>
-            <a href="#agent-skill">{t.navSkill}</a>
-            <a href={repoUrl} target="_blank" rel="noreferrer">
-              GitHub
+            <a href="#ecosystem">{t.navSkill}</a>
+            <a href={officialSiteUrl} target="_blank" rel="noreferrer">
+              {t.navOfficial}
             </a>
           </nav>
           <LanguageSwitch language={language} setLanguage={setLanguage} />
@@ -2192,7 +2214,6 @@ function App() {
       <Hero
         latestCases={heroCases}
         language={language}
-        repoUrl={repoUrl}
         totalCases={siteData.totalCases}
         categoryCount={siteData.categories.length}
         onOpenCase={(item) => setPreview({ type: 'case', item })}
@@ -2266,8 +2287,8 @@ function App() {
 
         <div className="resultBar">
           <span>{language === 'zh' ? `${filteredCases.length} ${t.matching}` : `${filteredCases.length} ${t.matching}`}</span>
-          <a href={repoUrl} target="_blank" rel="noreferrer">
-            {t.openGithub}
+          <a href={galleryPageUrl}>
+            {t.openGallery}
             <ArrowUpRight size={16} />
           </a>
         </div>
@@ -2303,7 +2324,7 @@ function App() {
         onOpenTemplate={(item) => setPreview({ type: 'template', item })}
       />
 
-      <SkillSection language={language} repoUrl={repoUrl} />
+      <EcosystemSection language={language} />
       <PreviewDialog
         preview={preview}
         language={language}

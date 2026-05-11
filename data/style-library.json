@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "repository": "https://github.com/freestylefly/awesome-gpt-image-2",
+  "repository": "https://github.com/fzy2012/aigcprompt",
   "templateDocument": "docs/templates.md",
   "tagLabels": {
     "Art": { "en": "Art", "zh": "艺术" },

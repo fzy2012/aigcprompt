@@ -857,6 +857,7 @@ button {
 .skillPreview figcaption {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 12px 14px;
@@ -868,6 +869,22 @@ button {
 .skillPreview figcaption svg {
   flex: 0 0 auto;
   color: #78ffb9;
+}
+
+.skillPreview figcaption a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 0 10px;
+  color: #eaf3ff;
+  font-weight: 700;
+}
+
+.skillPreview figcaption a:hover {
+  border-color: rgba(120, 255, 185, 0.62);
+  background: rgba(120, 255, 185, 0.1);
 }
 
 .gallerySection {
