@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 2 | 提示词集合画廊</title>
+  <meta name="description" content="提示词集合 Part 2 分册页，覆盖例 166-353，集中浏览品牌、卡牌、国风、商业视觉和新增案例内容。" />
+  <style>
+    :root { color-scheme: dark; --bg:#08101e; --panel:rgba(13,24,48,.78); --text:#f5f7ff; --muted:#b6c1df; --brand:#8ca3ff; --brand-2:#58e4db; --line:rgba(255,255,255,.1); --shadow:0 18px 56px rgba(0,0,0,.28); --radius:22px; }
+    * { box-sizing: border-box; } body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(140,163,255,.18), transparent 26%),radial-gradient(circle at top right, rgba(88,228,219,.14), transparent 30%),linear-gradient(180deg,#08101e 0%,#0a1226 42%,#09111f 100%); line-height:1.65; }
+    a { color:inherit; text-decoration:none; } img { display:block; width:100%; } .shell { width:min(1200px, calc(100% - 32px)); margin:0 auto; }
+    .topbar { position:sticky; top:0; z-index:40; border-bottom:1px solid var(--line); background:rgba(5,11,21,.55); backdrop-filter:blur(14px); }
+    .topbar-inner { width:min(1200px, calc(100% - 32px)); margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 0; }
+    .logo { display:flex; align-items:center; gap:12px; } .logo-badge { width:42px; height:42px; border-radius:14px; display:grid; place-items:center; font-weight:700; color:#08101f; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:var(--shadow); }
+    .logo-text strong { display:block; font-size:15px; } .logo-text span { display:block; color:var(--muted); font-size:12px; }
+    .nav { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; } .nav a,.chip,.button,.button-secondary { border-radius:999px; font-size:14px; }
+    .nav a,.chip,.button-secondary { border:1px solid var(--line); background:rgba(255,255,255,.03); color:var(--muted); padding:9px 14px; }
+    .button,.button-secondary { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 18px; }
+    .button { border:0; font-weight:700; color:#08101f; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:0 14px 36px rgba(88,228,219,.18); } .button-secondary { color:var(--text); }
+    .hero { padding:58px 0 24px; } .eyebrow { display:inline-flex; padding:9px 14px; border-radius:999px; border:1px solid rgba(140,163,255,.28); background:rgba(140,163,255,.08); color:#d7defa; font-size:13px; margin-bottom:18px; }
+    h1 { margin:0 0 16px; font-size:clamp(34px, 6vw, 58px); line-height:1.06; letter-spacing:-.02em; } .hero p { margin:0 0 20px; color:var(--muted); max-width:760px; font-size:18px; }
+    .hero-actions,.hero-meta,.tag-row,.card-links { display:flex; flex-wrap:wrap; gap:12px; } .hero-meta { margin-top:14px; }
+    .section { padding:24px 0; } .section-head { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-bottom:16px; }
+    .section-title { margin:0 0 8px; font-size:28px; letter-spacing:-.02em; } .section-intro { margin:0; color:var(--muted); max-width:760px; }
+    .panel,.card,.footer-panel { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); backdrop-filter:blur(12px); }
+    .panel { padding:20px; } .cards { display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); } .card { overflow:hidden; }
+    .card-cover { aspect-ratio:1.1 / 1; background:#111a31; } .card-cover img { height:100%; object-fit:cover; } .card-body { padding:18px; }
+    .card-body h3 { margin:0 0 8px; font-size:20px; letter-spacing:-.02em; } .card-body p,.panel p,.muted { margin:0; color:var(--muted); }
+    .chip { display:inline-flex; padding:8px 12px; } .list { list-style:none; padding:0; margin:12px 0 0; display:grid; gap:10px; color:var(--muted); }
+    .list li::before { content:"•"; color:var(--brand-2); margin-right:8px; }
+    .footer { padding:20px 0 54px; } .footer-panel { padding:24px; } .footer-grid { display:grid; grid-template-columns:1.1fr .9fr .9fr; gap:18px; margin-top:18px; }
+    .footer-col h3 { margin:0 0 10px; font-size:18px; } .footer-links { display:grid; gap:10px; color:var(--muted); } .footer-note { margin-top:18px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+    @media (max-width:760px) { .topbar-inner,.section-head { display:block; } .nav { justify-content:flex-start; margin-top:14px; } .footer-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="topbar"><div class="topbar-inner"><a class="logo" href="./index.html"><div class="logo-badge">A</div><div class="logo-text"><strong>提示词集合</strong><span>入行365旗下 AIGC Prompt 案例库</span></div></a><nav class="nav"><a href="./gallery.html">画廊总览</a><a href="./gallery-part-1.html">Part 1</a><a href="./templates.html">模板页</a><a href="https://ruhang365.cn/" target="_blank" rel="noreferrer">入行365官网</a></nav></div></header>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Part 2 · 例 166-353 · 品牌、商业与新增案例</div>
+      <h1>从更丰富的品牌与商业场景，<br />看到内容边界继续展开。</h1>
+      <p>Part 2 包含更多品牌视觉、卡牌、直播截图、国风、商业视觉和新增案例，适合已经熟悉基础类型后继续往下看。</p>
+      <div class="hero-actions"><a class="button" href="./docs/gallery-part-2.md">查看完整文档</a><a class="button-secondary" href="./gallery-part-1.html">切到 Part 1</a></div>
+      <div class="hero-meta"><span class="chip">例 166-353</span><span class="chip">品牌与商业</span><span class="chip">国风与新增</span><span class="chip">更丰富的内容边界</span></div>
+    </section>
+
+    <section class="section"><div class="panel"><h2 class="section-title">推荐浏览顺序</h2><p>如果你想快速抓住 Part 2 的价值，建议先看卡牌、品牌视觉、技术图解和国风长卷这些更有辨识度的内容。</p><ul class="list"><li>例 166：十二黄金圣斗士卡牌合集</li><li>例 310：零食品牌技术分解图</li><li>例 334：RAG 技术详解图</li><li>例 338：赤壁怀古长卷图</li></ul></div></section>
+
+    <section class="section">
+      <div class="section-head"><div><h2 class="section-title">代表案例</h2><p class="section-intro">以下案例会跳转到现有的具体案例文档锚点，方便继续查看完整内容。</p></div></div>
+      <div class="cards">
+        <article class="card"><div class="card-cover"><img src="./data/images/case166.jpg" alt="十二黄金圣斗士卡牌合集" /></div><div class="card-body"><div class="tag-row"><span class="chip">卡牌视觉</span><span class="chip">系列化</span></div><h3>例 166 · 十二黄金圣斗士卡牌合集</h3><p>适合感受系列化统一风格和批量生成的视觉控制能力。</p><div class="card-links"><a class="button-secondary" href="./docs/gallery-part-2.md#case-166">查看案例</a></div></div></article>
+        <article class="card"><div class="card-cover"><img src="./data/images/case225.jpg" alt="大师级真迹复刻" /></div><div class="card-body"><div class="tag-row"><span class="chip">艺术表达</span><span class="chip">复刻感</span></div><h3>例 225 · 大师级真迹复刻</h3><p>适合查看风格迁移、质感控制和艺术方向的视觉表达。</p><div class="card-links"><a class="button-secondary" href="./docs/gallery-part-2.md#case-225">查看案例</a></div></div></article>
+        <article class="card"><div class="card-cover"><img src="./data/images/case250.jpg" alt="小王子与星舰的浪漫联名" /></div><div class="card-body"><div class="tag-row"><span class="chip">联名感</span><span class="chip">叙事视觉</span></div><h3>例 250 · 小王子与星舰的浪漫联名</h3><p>适合查看叙事感与视觉联名方向如何结合。</p><div class="card-links"><a class="button-secondary" href="./docs/gallery-part-2.md#case-250">查看案例</a></div></div></article>
+        <article class="card"><div class="card-cover"><img src="./data/images/case310.jpg" alt="零食品牌技术分解图" /></div><div class="card-body"><div class="tag-row"><span class="chip">品牌视觉</span><span class="chip">商业表达</span></div><h3>例 310 · 零食品牌技术分解图</h3><p>适合品牌表达、营销视觉和商业化图像场景。</p><div class="card-links"><a class="button-secondary" href="./docs/gallery-part-2.md#case-310">查看案例</a></div></div></article>
+        <article class="card"><div class="card-cover"><img src="./data/images/case334.png" alt="RAG 技术详解图" /></div><div class="card-body"><div class="tag-row"><span class="chip">技术图解</span><span class="chip">中文信息图</span></div><h3>例 334 · RAG 技术详解图</h3><p>适合技术概念展示和知识图解，也是很容易进一步延展的内容类型。</p><div class="card-links"><a class="button-secondary" href="./docs/gallery-part-2.md#case-334">查看案例</a></div></div></article>
+        <article class="card"><div class="card-cover"><img src="./data/images/case338.png" alt="赤壁怀古长卷图" /></div><div class="card-body"><div class="tag-row"><span class="chip">国风</span><span class="chip">长卷叙事</span></div><h3>例 338 · 《赤壁怀古》长卷图</h3><p>适合展示长文本视觉化、古风叙事和复杂排版结合的能力。</p><div class="card-links"><a class="button-secondary" href="./docs/gallery-part-2.md#case-338">查看案例</a></div></div></article>
+        <article class="card"><div class="card-cover"><img src="./data/images/case341.jpg" alt="AP Calculus 学习表信息图" /></div><div class="card-body"><div class="tag-row"><span class="chip">学习图表</span><span class="chip">信息图</span></div><h3>例 341 · AP Calculus 学习表信息图</h3><p>适合查看教育类和结构化学习内容的图形表达方式。</p><div class="card-links"><a class="button-secondary" href="./docs/gallery-part-2.md#case-341">查看案例</a></div></div></article>
+        <article class="card"><div class="card-cover"><img src="./data/images/case350.jpg" alt="足球球员数据涂鸦海报" /></div><div class="card-body"><div class="tag-row"><span class="chip">运动海报</span><span class="chip">数据涂鸦</span></div><h3>例 350 · 足球球员数据涂鸦海报</h3><p>适合查看运动商业视觉、数据元素和强主视觉的结合方式。</p><div class="card-links"><a class="button-secondary" href="./docs/gallery-part-2.md#case-350">查看案例</a></div></div></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell"><div class="footer-panel"><div class="logo"><div class="logo-badge">A</div><div class="logo-text"><strong>提示词集合</strong><span>入行365旗下 AIGC Prompt 内容站</span></div></div><div class="footer-grid"><div class="footer-col"><h3>站内页面</h3><div class="footer-links"><a href="./index.html">首页</a><a href="./cases.html">案例页</a><a href="./gallery.html">画廊总览</a><a href="./templates.html">模板页</a></div></div><div class="footer-col"><h3>画廊分册</h3><div class="footer-links"><a href="./gallery-part-1.html">Part 1</a><a href="./gallery-part-2.html">Part 2</a><a href="./docs/gallery-part-2.md">Part 2 文档</a></div></div><div class="footer-col"><h3>入行365主应用</h3><div class="footer-links"><a href="https://ruhang365.cn/" target="_blank" rel="noreferrer">官网</a><a href="https://daily.ruhang365.cn/" target="_blank" rel="noreferrer">入行日报</a><a href="https://rhzl.ruhang365.cn/" target="_blank" rel="noreferrer">入行之路</a><a href="https://smzdy.ruhang365.cn/" target="_blank" rel="noreferrer">什么值得用</a></div></div></div><div class="footer-note">Part 2 分册页优先承接品牌、商业视觉和新增案例内容，并保留具体案例文档入口。</div></div></div></footer>
+</body>
+</html>

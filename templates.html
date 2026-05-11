@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>模板页 | 提示词集合</title>
+  <meta
+    name="description"
+    content="提示词集合模板页，聚合高频 AIGC Prompt 模板与使用建议，帮助你更快从案例进入可复用结构。"
+  />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08101e;
+      --panel: rgba(13, 24, 48, 0.78);
+      --text: #f5f7ff;
+      --muted: #b6c1df;
+      --brand: #8ca3ff;
+      --brand-2: #58e4db;
+      --line: rgba(255, 255, 255, 0.1);
+      --shadow: 0 18px 56px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(140, 163, 255, 0.18), transparent 26%),
+        radial-gradient(circle at top right, rgba(88, 228, 219, 0.14), transparent 30%),
+        linear-gradient(180deg, #08101e 0%, #0a1226 42%, #09111f 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 11, 21, 0.55);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #08101f;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow);
+    }
+
+    .logo-text strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .logo-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .nav a,
+    .chip,
+    .button,
+    .button-secondary {
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .nav a,
+    .chip,
+    .button-secondary {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      padding: 9px 14px;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+    }
+
+    .button {
+      border: 0;
+      font-weight: 700;
+      color: #08101f;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 14px 36px rgba(88, 228, 219, 0.18);
+    }
+
+    .button-secondary {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 58px 0 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 163, 255, 0.28);
+      background: rgba(140, 163, 255, 0.08);
+      color: #d7defa;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 18px;
+    }
+
+    .hero-actions,
+    .hero-meta,
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-meta {
+      margin-top: 14px;
+    }
+
+    .section {
+      padding: 24px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .panel,
+    .card,
+    .template,
+    .footer-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .panel,
+    .card,
+    .template {
+      padding: 20px;
+    }
+
+    .grid-4,
+    .grid-3,
+    .template-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .grid-3,
+    .template-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card h3,
+    .template h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p,
+    .panel p,
+    .template p,
+    .muted {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .chip {
+      display: inline-flex;
+      padding: 8px 12px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--brand-2);
+      margin-right: 8px;
+    }
+
+    .template pre {
+      margin: 14px 0 0;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #dfe7ff;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .footer {
+      padding: 20px 0 54px;
+    }
+
+    .footer-panel {
+      padding: 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.9fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner,
+      .section-head {
+        display: block;
+      }
+
+      .nav {
+        justify-content: flex-start;
+        margin-top: 14px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="./index.html">
+        <div class="logo-badge">A</div>
+        <div class="logo-text">
+          <strong>提示词集合</strong>
+          <span>入行365旗下 AIGC Prompt 案例库</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="./index.html">首页</a>
+        <a href="./cases.html">案例页</a>
+        <a href="#featured">高频模板</a>
+        <a href="https://ruhang365.cn/" target="_blank" rel="noreferrer">入行365官网</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">模板页 · 高频模板与快速复用入口</div>
+      <h1>不想逐条翻案例？<br />先从模板开始更快。</h1>
+      <p>
+        模板页适合已经明确场景、希望快速复用结构的用户。你可以先从最常用的模板开始，再按需要进入完整模板文档。
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#featured">查看高频模板</a>
+        <a class="button-secondary" href="./docs/templates.md">查看完整模板文档</a>
+      </div>
+      <div class="hero-meta">
+        <span class="chip">高频模板优先</span>
+        <span class="chip">先上手再深入</span>
+        <span class="chip">适合继续扩展专题页</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2 class="section-title">如何使用模板页</h2>
+        <p>如果你的目标是尽快得到一个能改能用的结构，这一页会比逐条翻案例更直接。</p>
+        <ul class="list">
+          <li>优先展示最常用、最容易复用的模板类型</li>
+          <li>把完整模板文档拆成更适合浏览的页面结构</li>
+          <li>保留完整模板文档入口，方便继续查看全部内容</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">高频模板</h2>
+          <p class="section-intro">先展示更高频、更容易直接拿去用的模板类型，帮助你更快开始。</p>
+        </div>
+      </div>
+
+      <div class="template-grid">
+        <article class="template">
+          <div class="tag-row">
+            <span class="chip">UI</span>
+            <span class="chip">界面图</span>
+          </div>
+          <h3>UI 与界面</h3>
+          <p>适合做产品界面、应用截图、功能演示和结构清晰的高保真页面图。</p>
+          <pre><code>为[产品类型]生成一张[平台，如 iOS/Android/Web]界面图。
+核心功能：[功能点A]、[功能点B]、[功能点C]。
+视觉风格：[极简/科技/拟物]，主色[颜色]，强调色[颜色]。
+布局：[顶部导航/双栏/卡片流]，信息层级清晰，留白充足。
+输出：高保真UI截图，文字清晰可读，比例[9:16/16:9]。</code></pre>
+          <ul class="list">
+            <li>平台、比例、布局要写清楚</li>
+            <li>文字内容尽量明确指定</li>
+          </ul>
+        </article>
+
+        <article class="template">
+          <div class="tag-row">
+            <span class="chip">信息图</span>
+            <span class="chip">图解</span>
+          </div>
+          <h3>图表与信息可视化</h3>
+          <p>适合知识图解、课程内容、关系图、流程图和面向大众的信息表达。</p>
+          <pre><code>生成[主题]信息图，目标读者为[人群]。
+结构：标题区 + [3-5]个模块（每模块含图标、短标题、1-2句说明）。
+图表类型：[流程图/对比图/关系图/时间线]。
+风格：[专业报告/科普插画]，主色[颜色]，背景[浅色/深色]。
+输出：信息层级清晰、可读性高的中文信息图。</code></pre>
+          <ul class="list">
+            <li>模块数量和图表类型要先定好</li>
+            <li>正文文案尽量短，不要过载</li>
+          </ul>
+        </article>
+
+        <article class="template">
+          <div class="tag-row">
+            <span class="chip">海报</span>
+            <span class="chip">排版</span>
+          </div>
+          <h3>海报与排版</h3>
+          <p>适合活动海报、产品海报、商业视觉和更强调主视觉冲击的内容。</p>
+          <pre><code>设计一张[活动/产品/电影]海报，主题为[主题词]。
+主视觉：[主体元素]，标题文案：[标题]，副标题：[副标题]。
+版式：[居中/左对齐/对角构图]，风格：[复古/未来/极简]。
+色彩：[主色 + 辅色]，氛围：[情绪关键词]。
+输出：可用于社媒传播的高分辨率海报。</code></pre>
+          <ul class="list">
+            <li>先写清主视觉是什么</li>
+            <li>主标题与副标题尽量直接锁定</li>
+          </ul>
+        </article>
+
+        <article class="template">
+          <div class="tag-row">
+            <span class="chip">电商</span>
+            <span class="chip">商品图</span>
+          </div>
+          <h3>商品与电商</h3>
+          <p>适合商品主图、卖点图、生活方式场景图和偏转化的视觉展示。</p>
+          <pre><code>生成[商品名]电商主图，卖点为[卖点1]、[卖点2]。
+场景：[纯色棚拍/生活方式场景]，镜头：[特写/半身/全景]。
+材质细节：[材质关键词]，灯光：[柔光/侧光/轮廓光]。
+构图：[居中突出主体/多角度拼图]。
+输出：适合电商平台展示的高清商品图。</code></pre>
+          <ul class="list">
+            <li>卖点数量不要太多</li>
+            <li>主图和场景图最好分开写</li>
+          </ul>
+        </article>
+
+        <article class="template">
+          <div class="tag-row">
+            <span class="chip">品牌</span>
+            <span class="chip">标志</span>
+          </div>
+          <h3>品牌与标志</h3>
+          <p>适合做品牌调性视觉、标志方向探索和更统一的品牌呈现。</p>
+          <pre><code>为[品牌名]设计一套品牌视觉方案。
+核心关键词：[品牌气质]、[目标人群]、[行业属性]。
+输出内容：[标志/名片/包装/海报]。
+风格：[极简/高级/科技/自然]，主色[颜色]，辅助色[颜色]。
+要求：整体统一、识别度高、适合品牌传播。</code></pre>
+          <ul class="list">
+            <li>品牌气质先于风格词</li>
+            <li>先定适用场景再做视觉延展</li>
+          </ul>
+        </article>
+
+        <article class="template">
+          <div class="tag-row">
+            <span class="chip">摄影</span>
+            <span class="chip">写实</span>
+          </div>
+          <h3>摄影与写实</h3>
+          <p>适合人物肖像、产品棚拍、写实风海报和更强调质感的画面。</p>
+          <pre><code>拍摄一张[主体]写实风照片。
+场景：[室内/街头/自然环境]，镜头：[近景/中景/广角]。
+光线：[清晨柔光/逆光/棚拍]，氛围：[冷静/温暖/克制]。
+材质与细节：[皮肤/布料/金属/玻璃]真实可信。
+输出：高质感、细节清晰、具有摄影感的画面。</code></pre>
+          <ul class="list">
+            <li>镜头语言决定画面质感</li>
+            <li>尽量减少无关装饰元素</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">模板分类总览</h2>
+          <p class="section-intro">当前模板内容共整理出 13 个方向，这里先按目录做成更容易浏览的结构。</p>
+        </div>
+      </div>
+      <div class="grid-4">
+        <div class="card"><h3>UI与界面</h3><p>产品图、应用截图、功能演示。</p></div>
+        <div class="card"><h3>图表与信息可视化</h3><p>信息图、流程图、关系图、时间线。</p></div>
+        <div class="card"><h3>海报与排版</h3><p>活动、产品、运动商业视觉和科普海报。</p></div>
+        <div class="card"><h3>商品与电商</h3><p>商品主图、卖点图、生活方式场景图。</p></div>
+        <div class="card"><h3>品牌与标志</h3><p>品牌视觉、标志方向、统一调性。</p></div>
+        <div class="card"><h3>建筑与空间</h3><p>建筑概念、空间展示、场景表达。</p></div>
+        <div class="card"><h3>摄影与写实</h3><p>人物、棚拍、质感型写实图像。</p></div>
+        <div class="card"><h3>插画与艺术</h3><p>艺术风格、角色感、氛围表达。</p></div>
+        <div class="card"><h3>人物与角色</h3><p>角色设定、人物海报、人格化形象。</p></div>
+        <div class="card"><h3>场景与叙事</h3><p>故事感画面、连续叙事和情绪场景。</p></div>
+        <div class="card"><h3>历史与古风题材</h3><p>国风、历史叙事、古典人物与长卷。</p></div>
+        <div class="card"><h3>文档与出版物</h3><p>封面、页面设计、出版感内容。</p></div>
+        <div class="card"><h3>其他应用场景</h3><p>更难归类但有强使用价值的模板集合。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">相关入口</h2>
+          <p class="section-intro">如果你希望结合案例一起看，或者查看完整模板内容，可以从这里继续进入其他页面。</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>案例页</h3>
+          <p>适合先从精选案例看具体输出，再回到模板做复用。</p>
+          <div class="card-links">
+            <a class="button-secondary" href="./cases.html">去案例页</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>完整模板文档</h3>
+          <p>保留全部模板原文，适合继续查看所有分类和完整内容。</p>
+          <div class="card-links">
+            <a class="button-secondary" href="./docs/templates.md">查看文档</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>入行365产品矩阵</h3>
+          <p>如果你想继续找工具、学习路径或进入社区，可以回到首页继续跳转。</p>
+          <div class="card-links">
+            <a class="button-secondary" href="./index.html">回首页</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-panel">
+        <div class="logo">
+          <div class="logo-badge">A</div>
+          <div class="logo-text">
+            <strong>提示词集合</strong>
+            <span>入行365旗下 AIGC Prompt 内容站</span>
+          </div>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>站内页面</h3>
+            <div class="footer-links">
+              <a href="./index.html">首页</a>
+              <a href="./cases.html">案例页</a>
+              <a href="./templates.html">模板页</a>
+              <a href="./legal.html">说明与版权</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>入行365主应用</h3>
+            <div class="footer-links">
+              <a href="https://ruhang365.cn/" target="_blank" rel="noreferrer">官网</a>
+              <a href="https://daily.ruhang365.cn/" target="_blank" rel="noreferrer">入行日报</a>
+              <a href="https://rhzl.ruhang365.cn/" target="_blank" rel="noreferrer">入行之路</a>
+              <a href="https://smzdy.ruhang365.cn/" target="_blank" rel="noreferrer">什么值得用</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>相关入口</h3>
+            <div class="footer-links">
+              <a href="https://ruhangcenter.ruhang365.cn/" target="_blank" rel="noreferrer">个人中心</a>
+              <a href="https://adpc.ruhang365.cn/" target="_blank" rel="noreferrer">Agent 学习</a>
+              <a href="https://botguide.ruhang365.cn/" target="_blank" rel="noreferrer">OpenClaw 指南</a>
+              <a href="https://ruhangcodeguide.ruhang365.cn/" target="_blank" rel="noreferrer">AI Coding 指南</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note">
+          当前页面提供高频模板、分类目录和完整模板文档入口，方便从首页或案例页继续进入模板内容。
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

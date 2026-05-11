@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>画廊总览 | 提示词集合</title>
+  <meta
+    name="description"
+    content="提示词集合画廊总览页，集中展示推荐案例、分册入口与分类概览，帮助你快速进入完整案例内容。"
+  />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08101e;
+      --panel: rgba(13, 24, 48, 0.78);
+      --text: #f5f7ff;
+      --muted: #b6c1df;
+      --brand: #8ca3ff;
+      --brand-2: #58e4db;
+      --line: rgba(255, 255, 255, 0.1);
+      --shadow: 0 18px 56px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(140, 163, 255, 0.18), transparent 26%),
+        radial-gradient(circle at top right, rgba(88, 228, 219, 0.14), transparent 30%),
+        linear-gradient(180deg, #08101e 0%, #0a1226 42%, #09111f 100%);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .shell { width: min(1200px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 11, 21, 0.55); backdrop-filter: blur(14px);
+    }
+    .topbar-inner {
+      width: min(1200px, calc(100% - 32px)); margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-badge {
+      width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center;
+      font-weight: 700; color: #08101f; background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow);
+    }
+    .logo-text strong { display: block; font-size: 15px; }
+    .logo-text span { display: block; color: var(--muted); font-size: 12px; }
+    .nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+    .nav a, .chip, .button, .button-secondary { border-radius: 999px; font-size: 14px; }
+    .nav a, .chip, .button-secondary {
+      border: 1px solid var(--line); background: rgba(255,255,255,0.03); color: var(--muted); padding: 9px 14px;
+    }
+    .button, .button-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 18px;
+    }
+    .button {
+      border: 0; font-weight: 700; color: #08101f;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 14px 36px rgba(88, 228, 219, 0.18);
+    }
+    .button-secondary { color: var(--text); }
+    .hero { padding: 58px 0 24px; }
+    .eyebrow {
+      display: inline-flex; padding: 9px 14px; border-radius: 999px;
+      border: 1px solid rgba(140, 163, 255, 0.28); background: rgba(140, 163, 255, 0.08);
+      color: #d7defa; font-size: 13px; margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 16px; font-size: clamp(34px, 6vw, 58px); line-height: 1.06; letter-spacing: -0.02em; }
+    .hero p { margin: 0 0 20px; color: var(--muted); max-width: 760px; font-size: 18px; }
+    .hero-actions, .hero-meta, .card-links, .tag-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-meta { margin-top: 14px; }
+    .section { padding: 24px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 16px; }
+    .section-title { margin: 0 0 8px; font-size: 28px; letter-spacing: -0.02em; }
+    .section-intro { margin: 0; color: var(--muted); max-width: 760px; }
+    .panel, .card, .footer-panel {
+      background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: var(--shadow); backdrop-filter: blur(12px);
+    }
+    .panel, .card { padding: 20px; }
+    .cards, .grid-4 {
+      display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .cards { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -0.02em; }
+    .card p, .panel p, .muted { margin: 0; color: var(--muted); }
+    .chip { display: inline-flex; padding: 8px 12px; }
+    .list { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 10px; color: var(--muted); }
+    .list li::before { content: "•"; color: var(--brand-2); margin-right: 8px; }
+    .footer { padding: 20px 0 54px; }
+    .footer-panel { padding: 24px; }
+    .footer-grid { display: grid; grid-template-columns: 1.1fr 0.9fr 0.9fr; gap: 18px; margin-top: 18px; }
+    .footer-col h3 { margin: 0 0 10px; font-size: 18px; }
+    .footer-links { display: grid; gap: 10px; color: var(--muted); }
+    .footer-note { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    @media (max-width: 760px) {
+      .topbar-inner, .section-head { display: block; }
+      .nav { justify-content: flex-start; margin-top: 14px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="./index.html">
+        <div class="logo-badge">A</div>
+        <div class="logo-text">
+          <strong>提示词集合</strong>
+          <span>入行365旗下 AIGC Prompt 案例库</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="./index.html">首页</a>
+        <a href="./cases.html">案例页</a>
+        <a href="./templates.html">模板页</a>
+        <a href="https://ruhang365.cn/" target="_blank" rel="noreferrer">入行365官网</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">画廊总览 · 推荐入口与分册浏览</div>
+      <h1>先看推荐入口，<br />再进入完整分册。</h1>
+      <p>画廊总览页适合先建立整体印象。你可以从推荐案例开始，也可以直接进入 `Part 1` 或 `Part 2` 分册继续浏览。</p>
+      <div class="hero-actions">
+        <a class="button" href="./gallery-part-1.html">进入 Part 1</a>
+        <a class="button-secondary" href="./gallery-part-2.html">进入 Part 2</a>
+      </div>
+      <div class="hero-meta">
+        <span class="chip">353 个案例声明</span>
+        <span class="chip">推荐案例入口</span>
+        <span class="chip">分类概览</span>
+        <span class="chip">分册浏览</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2 class="section-title">推荐入口</h2>
+        <p>如果你不确定先看什么，可以从这些更容易代表站点价值的内容开始。</p>
+        <ul class="list">
+          <li>Part 1：例 1、例 2、例 6、例 17</li>
+          <li>Part 2：例 166、例 310、例 334、例 338、例 353</li>
+          <li>如果想直接套结构，建议同步打开模板页一起看</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">分册入口</h2>
+          <p class="section-intro">目前完整案例按两册组织，分别适合基础主流类型浏览和更丰富的商业化/新增案例浏览。</p>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="tag-row">
+            <span class="chip">例 1-165</span>
+            <span class="chip">基础主流类型</span>
+          </div>
+          <h3>Part 1</h3>
+          <p>覆盖信息图、界面、海报、摄影、插画等主流类型，适合作为第一批浏览内容。</p>
+          <div class="card-links">
+            <a class="button" href="./gallery-part-1.html">浏览 Part 1</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag-row">
+            <span class="chip">例 166-353</span>
+            <span class="chip">品牌与新增案例</span>
+          </div>
+          <h3>Part 2</h3>
+          <p>包含更多品牌、卡牌、直播截图、国风、商业视觉，以及作者新增实测和近期新增内容。</p>
+          <div class="card-links">
+            <a class="button" href="./gallery-part-2.html">浏览 Part 2</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">分类概览</h2>
+          <p class="section-intro">这里按当前内容分类做概览，方便你快速判断该先看哪一类案例。</p>
+        </div>
+      </div>
+      <div class="grid-4">
+        <div class="panel"><strong>UI 与界面</strong><p class="muted">68</p></div>
+        <div class="panel"><strong>图表与信息可视化</strong><p class="muted">50</p></div>
+        <div class="panel"><strong>海报与排版</strong><p class="muted">66</p></div>
+        <div class="panel"><strong>商品与电商</strong><p class="muted">18</p></div>
+        <div class="panel"><strong>品牌与标志</strong><p class="muted">16</p></div>
+        <div class="panel"><strong>建筑与空间</strong><p class="muted">25</p></div>
+        <div class="panel"><strong>摄影与写实</strong><p class="muted">28</p></div>
+        <div class="panel"><strong>插画与艺术</strong><p class="muted">24</p></div>
+        <div class="panel"><strong>人物与角色</strong><p class="muted">12</p></div>
+        <div class="panel"><strong>场景与叙事</strong><p class="muted">7</p></div>
+        <div class="panel"><strong>历史与古风题材</strong><p class="muted">8</p></div>
+        <div class="panel"><strong>文档与出版物</strong><p class="muted">7</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-panel">
+        <div class="logo">
+          <div class="logo-badge">A</div>
+          <div class="logo-text">
+            <strong>提示词集合</strong>
+            <span>入行365旗下 AIGC Prompt 内容站</span>
+          </div>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>站内页面</h3>
+            <div class="footer-links">
+              <a href="./index.html">首页</a>
+              <a href="./cases.html">案例页</a>
+              <a href="./gallery.html">画廊总览</a>
+              <a href="./templates.html">模板页</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>画廊分册</h3>
+            <div class="footer-links">
+              <a href="./gallery-part-1.html">Part 1</a>
+              <a href="./gallery-part-2.html">Part 2</a>
+              <a href="./docs/gallery.md">原始画廊文档</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>入行365主应用</h3>
+            <div class="footer-links">
+              <a href="https://ruhang365.cn/" target="_blank" rel="noreferrer">官网</a>
+              <a href="https://daily.ruhang365.cn/" target="_blank" rel="noreferrer">入行日报</a>
+              <a href="https://rhzl.ruhang365.cn/" target="_blank" rel="noreferrer">入行之路</a>
+              <a href="https://smzdy.ruhang365.cn/" target="_blank" rel="noreferrer">什么值得用</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note">当前页面聚合推荐入口、分类概览和分册浏览入口，便于继续进入完整画廊内容。</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

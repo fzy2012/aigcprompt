@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>说明与版权 | 提示词集合</title>
+  <meta
+    name="description"
+    content="提示词集合的项目说明、来源声明、版权与免责声明页面，集中说明内容来源、使用边界与联系处理方式。"
+  />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08101e;
+      --panel: rgba(13, 24, 48, 0.78);
+      --text: #f5f7ff;
+      --muted: #b6c1df;
+      --brand: #8ca3ff;
+      --brand-2: #58e4db;
+      --line: rgba(255, 255, 255, 0.1);
+      --shadow: 0 18px 56px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(140, 163, 255, 0.18), transparent 26%),
+        radial-gradient(circle at top right, rgba(88, 228, 219, 0.14), transparent 30%),
+        linear-gradient(180deg, #08101e 0%, #0a1226 42%, #09111f 100%);
+      line-height: 1.68;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 11, 21, 0.55);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; }
+
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #08101f;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: var(--shadow);
+    }
+
+    .logo-text strong { display: block; font-size: 15px; }
+    .logo-text span { display: block; color: var(--muted); font-size: 12px; }
+
+    .nav { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+
+    .nav a,
+    .button,
+    .button-secondary,
+    .chip {
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .nav a,
+    .button-secondary,
+    .chip {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      padding: 9px 14px;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+    }
+
+    .button {
+      border: 0;
+      font-weight: 700;
+      color: #08101f;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 14px 36px rgba(88, 228, 219, 0.18);
+    }
+
+    .button-secondary { color: var(--text); }
+
+    .hero {
+      padding: 58px 0 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(140, 163, 255, 0.28);
+      background: rgba(140, 163, 255, 0.08);
+      color: #d7defa;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 18px;
+    }
+
+    .hero-actions,
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-meta { margin-top: 14px; }
+
+    .section { padding: 24px 0; }
+
+    .grid,
+    .grid-2 {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .panel,
+    .footer-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .panel { padding: 22px; }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .panel p,
+    .muted {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--brand-2);
+      margin-right: 8px;
+    }
+
+    .notice {
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(140, 163, 255, 0.18);
+      background: rgba(140, 163, 255, 0.08);
+      color: #d7defa;
+      margin-top: 14px;
+    }
+
+    .footer {
+      padding: 20px 0 54px;
+    }
+
+    .footer-panel { padding: 24px; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.9fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner { display: block; }
+      .nav { justify-content: flex-start; margin-top: 14px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="./index.html">
+        <div class="logo-badge">A</div>
+        <div class="logo-text">
+          <strong>提示词集合</strong>
+          <span>入行365旗下 AIGC Prompt 案例库</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="./index.html">首页</a>
+        <a href="./gallery.html">画廊</a>
+        <a href="./templates.html">模板页</a>
+        <a href="https://ruhang365.cn/" target="_blank" rel="noreferrer">入行365官网</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">说明与版权 · 项目来源、使用边界与联系入口</div>
+      <h1>关于这个站，<br />以及内容如何使用。</h1>
+      <p>
+        这里集中说明项目定位、内容来源、版权边界、免责声明和联系处理方式。
+        如果你在使用案例、模板或引用内容前有疑问，建议先阅读本页。
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="./gallery.html">去看画廊</a>
+        <a class="button-secondary" href="./templates.html">去看模板</a>
+      </div>
+      <div class="hero-meta">
+        <span class="chip">项目说明</span>
+        <span class="chip">来源声明</span>
+        <span class="chip">版权与免责声明</span>
+        <span class="chip">联系处理方式</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-2">
+        <article class="panel">
+          <h2>项目定位</h2>
+          <p>提示词集合是一个面向 AIGC 场景的案例与模板内容站，重点在于把分散的案例整理成更容易浏览、复用和继续学习的结构。</p>
+          <ul class="list">
+            <li>内容重点是案例整理、模板复用和浏览路径优化</li>
+            <li>适合从灵感浏览、结构参考到模板套用的连续使用场景</li>
+            <li>站内内容同时承接入行365的学习、工具和社区产品入口</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>内容来源</h2>
+          <p>项目整理过程中参考了公开可访问的社区提示词与示例图片，也结合了现有仓库中的整理结果进行重新组织和归纳。</p>
+          <ul class="list">
+            <li>内容来源以公开可访问资料为主，用于学习、归纳和方法研究</li>
+            <li>相关内容的原始版权归原作者、原平台或原权利方所有</li>
+            <li>项目本身不主张对第三方原创内容拥有所有权</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-2">
+        <article class="panel">
+          <h2>版权与使用边界</h2>
+          <p>站内案例和模板主要用于学习、研究、归纳和结构参考。涉及第三方内容时，请以原作者、原平台或原仓库的授权条件为准。</p>
+          <ul class="list">
+            <li>不保证第三方内容默认可直接用于商业用途</li>
+            <li>商业使用前请自行确认授权边界并取得必要许可</li>
+            <li>引用、转载或再发布时，请尽量补充来源信息并尊重原始署名</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <h2>免责声明</h2>
+          <p>本项目尽量保证整理信息的清晰和完整，但不承诺所有第三方内容、链接、图片和提示词在任何时间点都具备完全准确性、完整性或可商用性。</p>
+          <ul class="list">
+            <li>站内内容不构成法律、版权、商业授权或平台合规建议</li>
+            <li>使用者应根据自身用途、平台规则和所在地区要求自行判断</li>
+            <li>如需用于对外发布、商用投放或产品上线，请自行完成复核</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="panel">
+          <h2>如有异议或需要处理</h2>
+          <p>如果你是原作者、权利人，或者认为某条内容存在不当展示、侵权、署名遗漏或不宜公开的情况，可通过仓库反馈方式联系处理。</p>
+          <ul class="list">
+            <li>请尽量提供具体条目、页面地址和说明信息，方便快速核验</li>
+            <li>核验后会尽快处理，包括修正、补充来源说明或下线相关内容</li>
+            <li>如果你正在做正式商用，请优先联系原始权利方确认授权</li>
+          </ul>
+          <div class="notice">
+            建议把本页与具体内容页面一起阅读，尤其是在准备对外引用、转载或商业使用时。
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <div class="footer-panel">
+        <div class="logo">
+          <div class="logo-badge">A</div>
+          <div class="logo-text">
+            <strong>提示词集合</strong>
+            <span>入行365旗下 AIGC Prompt 内容站</span>
+          </div>
+        </div>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>站内页面</h3>
+            <div class="footer-links">
+              <a href="./index.html">首页</a>
+              <a href="./gallery.html">画廊总览</a>
+              <a href="./cases.html">案例页</a>
+              <a href="./templates.html">模板页</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>说明页面</h3>
+            <div class="footer-links">
+              <a href="./legal.html">说明与版权</a>
+              <a href="./docs/disclaimer.md">原始声明文档</a>
+              <a href="./README.md">项目总览</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>入行365主应用</h3>
+            <div class="footer-links">
+              <a href="https://ruhang365.cn/" target="_blank" rel="noreferrer">官网</a>
+              <a href="https://daily.ruhang365.cn/" target="_blank" rel="noreferrer">入行日报</a>
+              <a href="https://rhzl.ruhang365.cn/" target="_blank" rel="noreferrer">入行之路</a>
+              <a href="https://smzdy.ruhang365.cn/" target="_blank" rel="noreferrer">什么值得用</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-note">本页用于集中说明项目来源、版权边界、免责声明和联系处理方式，便于站点对外使用时统一查看。</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
