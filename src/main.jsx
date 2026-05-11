@@ -27,7 +27,7 @@ import {
   X
 } from 'lucide-react';
 import './styles.css';
-import { isSupabaseConfigured, supabase } from './supabaseClient';
+import { isSupabaseConfigured, siteUrl, supabase } from './supabaseClient';
 
 const fallbackRepoUrl = 'https://github.com/fzy2012/aigcprompt';
 const officialSiteUrl = 'https://ruhang365.cn';
@@ -119,23 +119,25 @@ const copy = {
     checkoutFailed: 'Checkout failed. Please try again later.',
     billingSuccess: 'Payment is processing. Credits will appear after Stripe confirms it.',
     billingCancelled: 'Checkout cancelled. You can choose another pack anytime.',
-    authRequired: 'Sign in to generate a test image.',
-    signIn: 'Sign in',
-    signInTitle: 'Sign in to generate test images',
-    signInSubtitle: 'Use email magic link or Google to unlock your free test image and future credits.',
+    authRequired: 'Sign in with your Ruhang365 account to generate a test image.',
+    signIn: 'Ruhang365 Sign In',
+    signInTitle: 'Sign in with your Ruhang365 account',
+    signInSubtitle: 'Use the same account across Daily, AIGC Prompt, and other Ruhang365 sites with email magic link or Google.',
     emailAddress: 'Email address',
     sendMagicLink: 'Send magic link',
-    magicLinkSent: 'Magic link sent. Check your inbox, then return here.',
+    magicLinkSent: 'Magic link sent. Check your inbox, finish sign-in, and return to this site with the same Ruhang365 account.',
     authRateLimited: 'Too many login emails were sent. Please wait a bit, or use Google sign-in once it is enabled.',
     googleNotConfigured: 'Google sign-in is not enabled yet.',
     tryAgainIn: (seconds) => `Try again in ${seconds}s`,
-    continueWithGoogle: 'Continue with Google',
+    continueWithGoogle: 'Continue with Google for Ruhang365',
     authNotConfigured: 'Login is not configured yet.',
     authError: 'Login failed. Please try again.',
+    authSharedHint: 'Shared account scope: Ruhang365, Daily, AIGC Prompt, Path, Tools, and other Ruhang365 apps connected to the same Supabase project.',
+    authCenterLink: 'Open Ruhang365 Center',
     signOut: 'Sign out',
-    account: 'Account',
+    account: 'Ruhang365 Account',
     adminPanel: 'Admin',
-    membershipCenter: 'Membership & Credits',
+    membershipCenter: 'Ruhang365 Membership & Credits',
     superAdmin: 'Super admin',
     credits: 'credits',
     buyCredits: 'Buy credits',
@@ -260,23 +262,25 @@ const copy = {
     checkoutFailed: '创建支付失败，请稍后再试。',
     billingSuccess: '支付正在处理中，Stripe 确认后积分会自动到账。',
     billingCancelled: '已取消支付，你可以随时换一个积分包或会员方案。',
-    authRequired: '登录后即可生成测试图。',
-    signIn: '登录',
-    signInTitle: '登录后生成测试图',
-    signInSubtitle: '使用邮箱魔法链接或 Google 登录，解锁 1 张免费测试图，并为后续积分体系做准备。',
+    authRequired: '登录入行365账号后即可生成测试图。',
+    signIn: '入行365登录',
+    signInTitle: '使用入行365统一账号登录',
+    signInSubtitle: '使用邮箱魔法链接或 Google 登录，同一账号可用于日报、提示词集合及其他接入同一体系的入行365站点。',
     emailAddress: '邮箱地址',
     sendMagicLink: '发送魔法链接',
-    magicLinkSent: '魔法链接已发送，请查收邮箱后回到这里。',
+    magicLinkSent: '登录链接已发送，请查收邮箱完成登录后回到本站，同一入行365账号可继续使用。',
     authRateLimited: '登录邮件发送太频繁，请稍后再试；Google 登录接通后也可以直接使用 Google 登录。',
     googleNotConfigured: 'Google 登录还没有启用。',
     tryAgainIn: (seconds) => `${seconds} 秒后重试`,
-    continueWithGoogle: '使用 Google 继续',
+    continueWithGoogle: '使用 Google 登录入行365',
     authNotConfigured: '登录功能还没有完成配置。',
     authError: '登录失败，请稍后再试。',
+    authSharedHint: '统一账号适用范围：入行365官网、日报、提示词集合、入行之路、什么值得用，以及接入同一 Supabase 项目的其他站点。',
+    authCenterLink: '前往入行个人中心',
     signOut: '退出登录',
-    account: '账号',
+    account: '入行365账号',
     adminPanel: '管理后台',
-    membershipCenter: '会员与积分',
+    membershipCenter: '入行365会员与积分',
     superAdmin: '超级管理员',
     credits: '积分',
     buyCredits: '购买积分',
@@ -796,7 +800,8 @@ function AuthModal({ open, language, onClose }) {
 
   if (!open) return null;
 
-  const redirectTo = `${window.location.origin}${window.location.pathname}`;
+  const redirectBase = siteUrl || window.location.origin;
+  const redirectTo = `${redirectBase}/`;
 
   async function handleEmailSubmit(event) {
     event.preventDefault();
@@ -901,6 +906,11 @@ function AuthModal({ open, language, onClose }) {
           <LogIn size={17} />
           {t.continueWithGoogle}
         </button>
+        <p className="authHint">{t.authSharedHint}</p>
+        <a className="authCenterLink" href={centerSiteUrl} target="_blank" rel="noreferrer">
+          <Users size={17} />
+          {t.authCenterLink}
+        </a>
         {message ? (
           <p className={cx('authMessage', status === 'error' && 'error', status === 'sent' && 'sent')}>
             {message}
@@ -2153,6 +2163,12 @@ function App() {
       cancelled = true;
     };
   }, [session?.access_token]);
+
+  useEffect(() => {
+    if (session) {
+      setAuthOpen(false);
+    }
+  }, [session]);
 
   useEffect(() => {
     if (!siteData || !styleLibrary || !window.location.hash) return;

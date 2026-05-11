@@ -1949,6 +1949,33 @@ button {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.authHint {
+  margin-top: 14px;
+  color: #c9d7ea;
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.authCenterLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 42px;
+  margin-top: 12px;
+  border: 1px solid rgba(103, 232, 249, 0.2);
+  border-radius: 8px;
+  background: rgba(103, 232, 249, 0.08);
+  color: #dff8ff;
+  font-weight: 800;
+}
+
+.authCenterLink:hover {
+  border-color: rgba(103, 232, 249, 0.52);
+  background: rgba(103, 232, 249, 0.14);
+}
+
 .authForm button:disabled,
 .googleButton:disabled,
 .adminHeader button:disabled {

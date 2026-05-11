@@ -278,19 +278,30 @@ Vercel 需要配置这些环境变量：
 ```bash
 VITE_SUPABASE_URL=
 VITE_SUPABASE_ANON_KEY=
+VITE_APP_URL=https://aigcprompt.ruhang365.cn
 SUPABASE_SERVICE_ROLE_KEY=
-SUPER_ADMIN_EMAILS=2689458656@qq.com
+SUPER_ADMIN_EMAILS=2689458656@qq.com,canghe0818@gmail.com
 CIYUAN_API_KEY=
 CIYUAN_BASE_URL=https://ciyuan.today
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
 ```
 
 配置清单：
 
 - 将 [`supabase/migrations/202605090001_user_credits.sql`](supabase/migrations/202605090001_user_credits.sql) 应用到 Supabase 项目。
-- 在 Supabase Auth Redirect URLs 里加入 `https://gpt-image2.canghe.ai`，以及 `http://127.0.0.1:5173` 等本地开发地址。
+- 在 Supabase Auth Redirect URLs 里加入 `https://aigcprompt.ruhang365.cn`、`https://daily.ruhang365.cn`，以及 `http://127.0.0.1:5173` 等本地开发地址。
 - 在 Supabase Auth 里开启邮箱 OTP 或魔法链接。
 - Google Provider 的代码入口已接好，后续在 Supabase Dashboard 填入 Google OAuth 凭据后即可使用。
 - `SUPABASE_SERVICE_ROLE_KEY` 只放在 Vercel Environment Variables 这类服务端环境里。
+
+统一账号体系接入建议：
+
+- `aigcprompt.ruhang365.cn` 与 `daily.ruhang365.cn` 使用同一个 Supabase Project，这样同一邮箱或 Google 账号可以在两个站点复用。
+- 在 Vercel 为当前站配置与 `daily` 相同的 `VITE_SUPABASE_URL` 和 `VITE_SUPABASE_ANON_KEY`，并新增 `VITE_APP_URL=https://aigcprompt.ruhang365.cn`。
+- 在 Supabase Dashboard 的 `Authentication -> URL Configuration` 中，把所有 `ruhang365` 体系域名加入 `Redirect URLs` 白名单。
+- 在 `Authentication -> Providers` 中启用与 `daily` 相同的登录方式，至少保持邮箱 OTP / Magic Link 和 Google 一致。
+- 若要实现真正跨站免重复登录，建议后续把 `ruhangcenter.ruhang365.cn` 做成统一认证中心；当前方案先实现统一账号，不自动共享各站前端 localStorage 会话。
 
 <a name="section-gallery"></a>
 
